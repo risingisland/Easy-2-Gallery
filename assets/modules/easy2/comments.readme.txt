@@ -1,0 +1,78 @@
+/**
+ * EASY 2 GALLERY
+ * Coments processor for Easy 2 Gallery Module for MODx Evolution
+ * @author breezer <breezerfrazer@frsbuilders.com>
+ * @package     easy 2 gallery
+ * @subpackage  easy 2 comments processor
+ * @version 1.4.2
+ */
+ 
+NEW COMMENTS PROCESSING
+
+Comments functionality has been removed from the class file and now has its own processor.
+A new view processor snippet shows the comments on the landing page, and in the popup window.
+Comments settings in the module are accepted, and can be overwritten on a per snippet basis if needed.
+If reCaptcha is enabled in the config, that is used for the comment form. ( NEEDS TESTING )
+
+To use comments, enable comments in the e2g settings. This will produce an icon in the bottom right
+of your thumbnails which is a link to the comments opoup.
+example doc  snippet call:
+
+[!easy2? &gid=`2` &showonly=`images` &landingpage=`47`!]
+
+
+To turn off comments on specific galleries, use the following:
+&ecm       enables comments ( 0 off - default | 1 on )
+
+[!easy2? &gid=`2` &showonly=`images` &landingpage=`47` &ecm=`0`!]
+
+
+
+Landing page:
+
+(your e2g snippet call)
+[!easy2? &landingpage=`47` &lp_img_src=`generated` &lp_w=`450` &lp_h=`450`!]
+
+[!easy2gallery_landingpage_comments?
+&ecl_page=`2`
+&captcha=`1`
+&comments_lang=``
+&approved=`1`
+&delay=`30`
+!]
+
+
+&ecl_page           how many comments per page ( defaults to e2g config )
+&captcha            option to use evolution built in captcha ( 0 off - default | 1 on )
+&captcha_tpl        name of captcha tpl Chunk - defaults to templates/default/captcha.tpl
+&comments_lang      language for the comments ( default english )
+&approved           option to auto approve comments ( 0 off - default | 1 on )
+&delay              number of seconds between comment entries ( default 30 )
+
+
+
+View processor:
+This page uses the comment settings and is only seen if comments are enabled.
+Clicking on the number of comments shown on the thumbnail image opens the viewer page
+with the comments.
+   
+[!easy2gallery_view_processor?
+&captcha=`1`
+&captcha_tpl=`captcha_tpl`
+&comments_lang=``
+&approved=`1`
+&delay=`90`
+!]
+
+
+&captcha            option to use evolution built in captcha ( 0 off - default | 1 on )
+&captcha_tpl        name of captcha tpl Chunk - defaults to templates/default/captcha.tpl
+&comments_lang      language for the comments ( default english )
+&approved           option to auto approve comments ( 0 off - default | 1 on )
+&delay              number of seconds between comment entries ( default 30 )
+
+
+
+
+
+

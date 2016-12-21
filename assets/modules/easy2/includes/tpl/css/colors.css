@@ -1,0 +1,307 @@
+/*Font Awesome Icon Styles*/
+i.icon-custom {
+  color: #555;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  line-height: 40px;
+  margin-bottom: 5px;
+  text-align: center;
+  display: inline-block;   
+  border: solid 1px #555;
+}
+
+i.icon-vs {
+   width: 20px;
+   height: 20px;
+   font-size: 16px;
+   line-height: 20px;
+}
+
+i.icon-sm {
+   width: 35px;
+   height: 35px;
+   font-size: 16px;
+   line-height: 35px;
+}
+
+i.icon-lg {
+  width: 60px;
+  height: 60px;
+  font-size: 31px;
+  line-height: 60px;
+  margin-bottom: 10px;
+}
+
+i.icon-2x {
+  font-size: 30px;
+}
+i.icon-3x {
+  font-size: 40px;
+}
+i.icon-4x {
+  font-size: 50px;
+}
+/*Text Colors
+------------------------------------*/
+.color-sea { color: #1abc9c;}
+.color-red { color: #e74c3c;}
+.color-aqua { color: #27d7e7;}
+.color-blue { color: #3498db;}
+.color-grey { color: #95a5a6;}
+.color-dark { color: #555555;}
+.color-green { color: #72c02c;}
+.color-brown { color: #9c8061;}
+.color-light { color: #ffffff;}
+.color-orange { color: #e67e22;}
+.color-green1 { color: #2ecc71;}
+.color-purple { color: #9b6bcc;}
+.color-dark-blue { color: #4765a0;}
+.color-light-grey { color: #585f69;}
+.color-light-green { color: #79d5b3;}
+
+/*Background Colors
+------------------------------------*/
+.bg-color-dark,
+.bg-color-sea,
+.bg-color-red,
+.bg-color-aqua,
+.bg-color-blue,
+.bg-color-grey,
+.bg-color-green,
+.bg-color-brown,
+.bg-color-orange,
+.bg-color-green1,
+.bg-color-purple,
+.bg-color-dark-blue,
+.bg-color-light-grey,
+.bg-color-light-green {
+  color: #fff;
+}
+.bg-color-dark { background-color: #555;}
+.bg-color-sea { background-color: #1abc9c;}
+.bg-color-red { background-color: #e74c3c;}
+.bg-color-aqua { background-color: #27d7e7;}
+.bg-color-blue { background-color: #3498db;}
+.bg-color-grey { background-color: #95a5a6;}
+.bg-color-green { background-color: #72c02c;}
+.bg-color-brown { background-color: #9c8061;}
+.bg-color-orange { background-color: #e67e22;}
+.bg-color-green1 { background-color: #2ecc71;}
+.bg-color-purple { background-color: #9b6bcc;}
+.bg-color-dark-blue { background-color: #4765a0;}
+.bg-color-light-grey { background-color: #585f69;}
+.bg-color-light-green { background-color: #79d5b3;}
+
+/*Rounded and Circle Classes
+------------------------------------*/
+.rounded { border-radius: 4px !important;}
+.rounded-x { border-radius: 50% !important;}
+.rounded-2x { border-radius: 10px !important;}
+.rounded-3x { border-radius: 15px !important;}
+.rounded-4x { border-radius: 20px !important;}
+.rounded-top { border-radius: 4px 4px 0 0 !important;}
+.rounded-left { border-radius: 4px 0 0 4px !important;}
+.rounded-right { border-radius: 0 4px 4px 0 !important;}
+.rounded-bottom { border-radius: 0 0 4px 4px !important;}
+/*Icons Color*/
+i.icon-color-u,
+i.icon-color-red,
+i.icon-color-sea,
+i.icon-color-dark,
+i.icon-color-grey,
+i.icon-color-blue,
+i.icon-color-green,
+i.icon-color-yellow,
+i.icon-color-orange,
+i.icon-color-purple,
+i.icon-color-aqua,
+i.icon-color-brown,
+i.icon-color-dark-blue,
+i.icon-color-light-grey,
+i.icon-color-light-green {
+  background: none;
+}
+i.icon-color-verylight {
+   color: #dedede;
+   float:left;
+   margin-right: 5px;
+}
+i.icon-color-u {
+   color: #72c02c;
+   border: solid 1px #72c02c;
+}
+i.icon-color-blue {
+   color: #3498db;
+   border: solid 1px #3498db;
+}
+i.icon-color-red {
+   color: #e74c3c;
+  border: solid 1px #e74c3c;
+}
+i.icon-color-sea {
+   color: #1abc9c;
+   border: solid 1px #1abc9c;
+}
+i.icon-color-green {
+   color: #2ecc71;
+   border: solid 1px #2ecc71;
+}
+i.icon-color-yellow {
+   color: #f1c40f;
+   border: solid 1px #f1c40f;
+}
+i.icon-color-orange {
+   color: #e67e22;
+   border: solid 1px #e67e22;
+}
+i.icon-color-grey {
+   color: #95a5a6;
+   border: solid 1px #95a5a6;
+}
+i.icon-color-purple {
+   color: #9b6bcc;
+   border: solid 1px #9b6bcc;
+}
+i.icon-color-aqua {
+   color: #27d7e7;
+   border: solid 1px #27d7e7;
+}
+i.icon-color-brown {
+   color: #9c8061;
+   border: solid 1px #9c8061;
+}
+i.icon-color-dark-blue {
+   color: #4765a0;
+   border: solid 1px #4765a0;
+}
+i.icon-color-light-green {
+   color: #79d5b3;
+   border: solid 1px #79d5b3;
+}
+i.icon-color-light {
+   color: #fff;
+   border: solid 1px #fff;
+}
+i.icon-color-light-grey {
+   color: #585f69;
+   border: solid 1px #585f69;
+}
+i.icon-no-border {
+   border: 0;
+}
+/*Icons Backgroun Color*/
+i.icon-bg-u,
+i.icon-bg-red,
+i.icon-bg-sea,
+i.icon-bg-dark,
+i.icon-bg-grey,
+i.icon-bg-blue,
+i.icon-bg-green,
+i.icon-bg-yellow,
+i.icon-bg-orange,
+i.icon-bg-purple,
+i.icon-bg-aqua,
+i.icon-bg-brown,
+i.icon-bg-dark-blue,
+i.icon-bg-light-grey,
+i.icon-bg-light-green {
+   color: #fff;
+   border-color: transparent;
+}
+
+i.icon-bg-u {
+   background: #72c02c;
+}
+i.icon-bg-blue {
+   background: #3498db;
+}
+i.icon-bg-red {
+   background: #e74c3c;
+}
+i.icon-bg-sea {
+   background: #1abc9c;
+}
+i.icon-bg-green {
+   background: #2ecc71;
+}
+i.icon-bg-yellow {
+   background: #f1c40f;
+}
+i.icon-bg-orange {
+   background: #e67e22;
+}
+i.icon-bg-grey {
+   background: #95a5a6;
+}
+i.icon-bg-dark {
+   background: #555;
+}
+i.icon-bg-purple {
+   background: #9b6bcc;
+}
+i.icon-bg-aqua {
+   background: #27d7e7;
+}
+i.icon-bg-brown {
+   background: #9c8061;
+}
+i.icon-bg-dark-blue {
+   background: #4765a0;
+}
+i.icon-bg-light-green {
+   background: #79d5b3;
+}
+i.icon-bg-light {
+   background: #fff;
+   border-color: transparent;   
+}
+i.icon-bg-light-grey {
+   background: #585f69;
+   border-color: transparent;  
+}
+
+.fa-fixed [class^="fa"],
+.fa-fixed [class*=" fa"] {
+  width: 1.25em;
+  text-align: center;
+  display: inline-block;
+}
+.fa-fixed [class^="fa"].fa-lg,
+.fa-fixed [class*=" fa"].fa-lg {
+ width: 1.5625em;
+}
+
+/*margins and padding*/
+.margin-bottom-5, 
+.margin-bottom-10, 
+.margin-bottom-15, 
+.margin-bottom-20,
+.margin-bottom-25, 
+.margin-bottom-30, 
+.margin-bottom-35, 
+.margin-bottom-40 { 
+   clear:both;
+}
+.margin-bottom-5  { margin-bottom:5px;}
+.margin-bottom-10 { margin-bottom:10px;} 
+.margin-bottom-15 { margin-bottom:15px;}
+.margin-bottom-20 { margin-bottom:20px;}
+.margin-bottom-25 { margin-bottom:25px;}
+.margin-bottom-30 { margin-bottom:30px;}
+.margin-bottom-35 { margin-bottom:35px;}
+.margin-bottom-40 { margin-bottom:40px;}
+
+.padding-5  { padding:5px;}
+.padding-10 { padding:10px;} 
+.padding-15 { padding:15px;}
+.padding-20 { padding:20px;}
+.padding-25 { padding:25px;}
+
+.float-left {float: left; margin-right:5px;}
+.float-right {float: right; margin-left:5px;}
+
+/**3.0**/
+
+.btn-group a:link {text-decoration:none; text-weight: normal;}
+
