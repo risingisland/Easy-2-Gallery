@@ -18,7 +18,7 @@ if (IN_MANAGER_MODE != 'true')
     <ul class="actionButtons">
         <li>
             <a href="<?php echo $this->e2gModCfg['blank_index']; ?>&amp;e2gpg=<?php echo $this->e2gModCfg['e2gPages']['files']['e2gpg']; ?>&amp;pid=<?php echo $this->sanitizedGets['pid']; ?>">
-                <i class="icon-custom icon-no-border icon-bg-orange fa fa-arrow-circle-left fa-2x icon-vs"></i> <?php echo $this->lng['back']; ?>
+                <i class="icon-no-border icon-color-yellow fa fa-arrow-circle-left fa-2x icon-vs"></i> <?php echo $this->lng['back']; ?>
             </a>
         </li>
     </ul>

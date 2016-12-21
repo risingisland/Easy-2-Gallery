@@ -9,7 +9,7 @@ include_once E2G_MODULE_PATH . 'includes/tpl/pages/file.menu.top.inc.php';
 <ul class="actionButtons">
     <li>
         <a href="<?php echo $this->e2gModCfg['index']; ?>">
-            <i class="icon-custom icon-no-border icon-bg-orange fa fa-arrow-circle-left fa-2x icon-vs"></i> <?php echo $this->lng['back']; ?>
+            <i class="icon-no-border icon-color-yellow fa fa-arrow-circle-left fa-2x icon-vs"></i> <?php echo $this->lng['back']; ?>
         </a>
     </li>
 </ul>

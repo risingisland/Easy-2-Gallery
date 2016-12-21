@@ -1,6 +1,7 @@
 .e2g {
     padding: 20px;
 	border: none;
+	background-color: #FFF;
 }
 .e2g  .radio input[type="radio"], .e2g .radio-inline input[type="radio"], .e2g .checkbox input[type="checkbox"], .e2g .checkbox-inline input[type="checkbox"] {
     margin-left: 0px;
@@ -22,6 +23,7 @@ h3 {
     position: relative;
     min-height: 40px;
     margin-top: -10px;
+	background-color: #FFF;
 }
 
 .pageTitle span {
@@ -49,9 +51,8 @@ h3 {
     text-decoration: none;
 }
 
-ul.actionButtons li {
-    /*    padding-right: 1em;
-        border-right: 1px solid #cccccc;*/
+ul .actionButtons {
+	background-color:#FFF;
 }
 
 .imPreview {
@@ -573,8 +574,10 @@ ul.modButtons li a:active {
 
 .system-buttons span {
     display: block;
-    background-color: #ddd;
+    background-color: #499BEA;
     border: 1px dotted #ccc;
+    padding: 5px;
+    color: #fff;
 }
 
 .system-buttons ul {
@@ -587,4 +590,11 @@ ul.modButtons li a:active {
 
 ul.modButtons li {
     margin-right: 10px;
+}
+
+.dynamic-tab-pane-control, .tab-pane {
+    background-color: #FFF;
+}
+form {
+    background-color: #FFF;
 }

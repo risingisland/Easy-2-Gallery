@@ -245,7 +245,7 @@ $filesLink = $this->e2gModCfg['e2gPages']['files']['link'];
                                                 <option value="delete"><?php echo $this->lng['delete']; ?></option>
                                             </select>
                                             <a href="javascript:void(0)" onclick="submitcomment(1)">
-                                                <i class="icon-custom icon-no-border icon-bg-green fa fa-play-circle fa-2x icon-vs"></i>
+                                                <i class="icon-no-border icon-color-green fa fa-play-circle fa-2x icon-vs"></i>
                                                 <span><?php echo $this->lng['go']; ?></span>
                                             </a>
                                         </li>
