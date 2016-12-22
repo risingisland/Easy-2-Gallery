@@ -51,28 +51,28 @@ Installation:
    category: same as easy2gallery
    snippet code:
    
-README.md
+```
 define( 'E2G_MODE', 'true' );
 $e2g_path =MODX_BASE_PATH.'assets/modules/easy2/';
 include $e2g_path.'comments_processor.easy2gallery.php';
-README.md
+```
 
 2. Create a new snippet, for this example named " easy2gallery_view_processor "
    category: same as easy2gallery
    snippet code:
    
-README.md
+```
 define( 'E2G_MODE', 'true' );
 $e2g_path =MODX_BASE_PATH.'assets/modules/easy2/';
 include $e2g_path.'view_processor.easy2gallery.php';
 
 return $output;
-README.md
+```
 
-3. You need a landing page, if you don't have one set up yet see
-the help section in the module for that info.
+3. You need a landing page, if you don't have one set up yet see the help section in the module for that info.
    
-   content of the landing page:
+Content of the landing page:
+   
  ```  
 [!easy2? &landingpage=`47` &lp_img_src=`generated` &lp_w=`450` &lp_h=`450`!]
 ```
@@ -87,10 +87,10 @@ the help section in the module for that info.
 ```
 
 4. Create a new document for the view processor.
-   doc settings:
-   blank template
-   all other settings off
-   published
+   Doc settings:
+     - blank template
+     - all other settings off
+     - published
    
    doc content:
    
@@ -104,17 +104,15 @@ the help section in the module for that info.
 !]
 ```
 
-
 5. Open assets/modules/easy2/plugin.easy2gallery.php file in a text editor or
 file manager editor at the top find this line:
-
+```
    $e2g_vpl_id = 48;
-   
+```
 Change the 48 to the id of your view processor document.
    
 Make sure to check the following events on the System Events tab:
    OnWebPageInit
    OnWebPageComplete
-   
 
 See comments.readme.txt for full usage information.
