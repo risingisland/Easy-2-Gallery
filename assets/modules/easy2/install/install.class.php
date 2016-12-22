@@ -84,35 +84,6 @@ class install {
             $_SESSION['easy2err'][] = __LINE__ . ': ' . 'mysqli ERROR: ' . mysqli_error();
             return FALSE;
         }
-/*
-        $res = $modx->db->makeArray(
-                $modx->db->select( 'cat_id,cat_name,parent_id', $modx->getFullTableName( 'easy2_dirs' ),
-                                'parent_id='.$pid ) );
-
-        $count = count( $res );
-
-        $oldDirs = array();
-        $newDirs = array();
-
-        if( $res ){
-
-            for( $i=0; $i<$count; $i++ ) {
-
-                $oldDirs[$res[$i]['cat_id']]['id']          = $res[$i]['cat_id'];
-                $oldDirs[$res[$i]['cat_id']]['name']        = $res[$i]['cat_name'];
-                // goldsky -- switch the array parameter after renaming
-                $newDirs[$res[$i]['cat_name']]['id']        = $res[$i]['cat_id'];
-                $newDirs[$res[$i]['cat_name']]['name']      = $res[$i]['cat_name'];
-                $newDirs[$res[$i]['cat_name']]['parent_id'] = $res[$i]['parent_id'];
-        
-            }
-        } else {
-
-            $_SESSION['easy2err'][] = __LINE__ . ': ' . 'database query ERROR: SELECT cat_id,cat_name,parent_id from easy2_dirs';
-            return FALSE;
-    
-        }
-*/
 
         // mysqli File list
         $res = mysqli_query($this->modx->db->conn,'SELECT id,filename,size FROM ' . $this->modx->db->config['table_prefix'] . 'easy2_files WHERE dir_id=' . $pid);
@@ -133,35 +104,7 @@ class install {
             $_SESSION['easy2err'][] = __LINE__ . ': ' . 'mysqli ERROR: ' . mysqli_error();
             return FALSE;
         }
-/*
-        $res = $modx->db->makeArray(
-                $modx->db->select( 'id,filename,size', $modx->getFullTableName( 'easy2_files' ),
-                                'dir_id=' . $pid ) );
 
-        $count = count( $res );
-
-        $oldFiles = array();
-        $newFiles = array();
-
-        if( $res ){
-
-            for( $i=0; $i<$count; $i++ ) {
-                $oldFiles[$res[$i]['id']]['id']         = $res[$i]['id'];
-                $oldFiles[$res[$i]['id']]['name']       = $res[$i]['filename'];
-                $oldFiles[$res[$i]['id']]['size']       = $res[$i]['size'];
-                // goldsky -- switch the array parameter after renaming
-                $newFiles[$res[$i]['filename']]['id']   = $res[$i]['id'];
-                $newFiles[$res[$i]['filename']]['name'] = $res[$i]['filename'];
-                $newFiles[$res[$i]['filename']]['size'] = $res[$i]['size'];
-
-            }
-        } else {
-
-            $_SESSION['easy2err'][] = __LINE__ . ': ' . 'database query ERROR: SELECT id,filename,size form easy2_files';
-            return FALSE;
-
-        }
-*/
         $fs = array();
         $fs = @glob($path . '*'); // goldsky -- DO NOT USE a slash here!
         natsort($fs);
@@ -390,24 +333,6 @@ class install {
          * STORE variable arrays for synchronizing comparison
          */
         // mysqli Dir list
-/*
-        $res = mysqli_query($this->modx->db->conn,'SELECT cat_id,cat_name FROM ' . $this->modx->db->config['table_prefix'] . 'easy2_dirs WHERE parent_id=' . $pid);
-
-        $oldDirs = array();
-        $newDirs = array();
-        if ($res) {
-            while ($l = mysqli_fetch_assoc($res)) {
-                $oldDirs[$l['cat_id']]['id'] = $l['cat_id'];
-                $oldDirs[$l['cat_id']]['name'] = $l['cat_name'];
-                // goldsky -- switch the array parameter after renaming
-                $newDirs[$l['cat_name']]['id'] = $l['cat_id'];
-                $newDirs[$l['cat_name']]['name'] = $l['cat_name'];
-            }
-        } else {
-            $_SESSION['easy2err'][] = __LINE__ . ': ' . 'mysqli ERROR: ' . mysqli_error();
-            return FALSE;
-        }
-*/
         $res = $modx->db->makeArray(
                 $modx->db->select( 'cat_id,cat_name', $modx->getFullTableName( 'easy2_dirs' ),
                                 'parent_id='.$pid ) );
@@ -434,28 +359,7 @@ class install {
             return FALSE;
 
         }
-/*
-        // mysqli File list
-        $res = mysqli_query($this->modx->db->conn,'SELECT id,filename,size FROM ' . $this->modx->db->config['table_prefix'] . 'easy2_files WHERE dir_id=' . $pid);
 
-        $oldFiles = array();
-        $newFiles = array();
-        if ($res) {
-            while ($l = mysqli_fetch_assoc($res)) {
-                $oldFiles[$l['id']]['id'] = $l['id'];
-                $oldFiles[$l['id']]['name'] = $l['filename'];
-                $oldFiles[$l['id']]['size'] = $l['size'];
-                // goldsky -- switch the array parameter after renaming
-                $newFiles[$l['filename']]['id'] = $l['id'];
-                $newFiles[$l['filename']]['name'] = $l['filename'];
-                $newFiles[$l['filename']]['size'] = $l['size'];
-            }
-        } else {
-            $_SESSION['easy2err'][] = __LINE__ . ': ' . 'mysqli ERROR: ' . mysqli_error();
-            return FALSE;
-        }
-
-*/
         $res = $modx->db->makeArray(
                 $modx->db->select( 'id,filename,size', $modx->getFullTableName( 'easy2_files' ),
                                 'dir_id=' . $pid ) );
@@ -585,8 +489,7 @@ class install {
      */
     public function addField($table, $fieldName, $fieldInfo, $position=null) {
         if ($this->checkField($this->modx->db->config['table_prefix'] . $table, $fieldName) === FALSE) {
-            //if (!mysqli_query($this->modx->db->conn,'ALTER TABLE ' . $this->modx->db->config['table_prefix'] . $table . ' ADD `' . $fieldName . '` ' . $fieldInfo . ' ' . $position))
-if (!$this->modx->db->query('ALTER TABLE ' . $this->modx->db->config['table_prefix'] . $table . ' ADD `' . $fieldName . '` ' . $fieldInfo . ' ' . $position))
+            if (!$this->modx->db->query('ALTER TABLE ' . $this->modx->db->config['table_prefix'] . $table . ' ADD `' . $fieldName . '` ' . $fieldInfo . ' ' . $position))
 
                 $_SESSION['easy2err'][] = __LINE__ . ': ' . $this->lngi['field'] . ' ' . $this->modx->db->config['table_prefix'] . $table . '.' . $fieldName . ' ' . $this->lngi['created_err'];
             else
@@ -657,27 +560,8 @@ if (!$this->modx->db->query('ALTER TABLE ' . $this->modx->db->config['table_pref
         // CHECK/CREATE TABLES
         // mysqli_list_fields()
         // GET All Tables
-/*
-        $dbase = str_replace('`', '', $this->modx->db->config['dbase']);
-        //$res = mysqli_query($this->modx->db->conn,'SHOW TABLES FROM `' . $dbase . '`');
-                $res = mysqli_query($this->modx->db->conn,"SHOW TABLES");
-        //$res = $this->modx->db->select('SHOW TABLES FROM `' . $dbase . '`');
-                if (!$res) {
-            echo __LINE__ . ' : $dbase = ' . $dbase . '<br />';
-            echo __LINE__ . ' : $dbase = ' . 'SHOW TABLES FROM ' . $dbase . '<br />';
-            echo __LINE__ . ' : $params = ' . mysqli_error() . '<br />';
-            die();
-        }
-        $tab = array();
-        while ($row = mysqli_fetch_row($res)) {
-            $tab[$row[0]] = $row[0];
-        }
-
-*/
-//$res = $this->modx->db->query( "SHOW TABLES" );
-
-$res = $this->modx->db->makeArray($this->modx->db->query("SHOW TABLES"));
-if (!$res) {
+        $res = $this->modx->db->makeArray($this->modx->db->query("SHOW TABLES"));
+        if (!$res) {
             echo __LINE__ . ': query to SHOW TABLES failed';
             die();
         }
@@ -689,14 +573,13 @@ if (!$res) {
         
         // easy2_dirs CHECK
         if (isset($tab['easy2_dirs'])) {
-            //if (!mysqli_query($this->modx->db->conn,'RENAME TABLE easy2_dirs TO ' . $this->modx->db->config['table_prefix'] . 'easy2_dirs')) {
-            //      $_SESSION['easy2err'][] = __LINE__ . ': ' . $this->lngi['table'] . ' easy2_dirs ' . $this->lngi['rename_err']
-            //            . '<br />' . mysqli_error();
 
-if (!$this->modx->db->query( 'RENAME TABLE easy2_dirs TO ' . $this->modx->db->config['table_prefix'] . 'easy2_dirs')) {
+            if (!$this->modx->db->query( 'RENAME TABLE easy2_dirs TO ' . $this->modx->db->config['table_prefix'] . 'easy2_dirs')) {
 
                 $_SESSION['easy2err'][] = __LINE__ . ': ' . $this->lngi['table'] . ' easy2_dirs ' . $this->lngi['rename_err'];
+
                 $this->chref($index);
+
             }
         }
 
@@ -726,34 +609,8 @@ if (!$this->modx->db->query( 'RENAME TABLE easy2_dirs TO ' . $this->modx->db->co
                         ENGINE=MyISAM
                         CHARACTER SET ' . $this->databaseCharSet($post['database_collation'], 'Charset') . '
                         COLLATE ' . $this->databaseCharSet($post['database_collation'], 'Collation');
-             /*
-             $createDirTable = "CREATE TABLE IF NOT EXISTS " . $this->modx->db->config['table_prefix'] . "easy2_dirs (
-                        `parent_id` INT(10) UNSIGNED NOT NULL DEFAULT '0',
-                        `cat_id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
-                        `cat_left` INT(10) NOT NULL DEFAULT '0',
-                        `cat_right` INT(10) UNSIGNED NOT NULL DEFAULT '0',
-                        `cat_level` INT(10) UNSIGNED NOT NULL DEFAULT '0',
-                        `cat_name` VARCHAR(255) NOT NULL DEFAULT '',
-                        `cat_alias` VARCHAR(255) NULL DEFAULT NULL,
-                        `cat_summary` VARCHAR(255) NULL DEFAULT NULL,
-                        `cat_tag` VARCHAR(255) NULL DEFAULT NULL,
-                        `cat_description` TEXT NULL DEFAULT NULL,
-                        `date_added` DATETIME NULL DEFAULT NULL,
-                        `added_by` TINYINT(4) UNSIGNED NULL DEFAULT NULL,
-                        `last_modified` DATETIME NULL DEFAULT NULL,
-                        `modified_by` TINYINT(4) NULL DEFAULT NULL,
-                        `cat_visible` TINYINT(4) NOT NULL DEFAULT '1',
-                        `cat_redirect_link` VARCHAR(255) NULL DEFAULT NULL,
-                        `cat_thumb_id` INT(50) UNSIGNED NULL DEFAULT NULL,
-                        PRIMARY KEY (`cat_id`),
-                        INDEX `cat_left` (`cat_left`)
-                        )
-                        ENGINE=MyISAM
-                        CHARACTER SET " . $this->databaseCharSet($post['database_collation'], 'Charset') . "
-                        COLLATE " . $this->databaseCharSet($post['database_collation'], 'Collation');
-                */
-            //$queryCreateDirTable = mysqli_query($this->modx->db->conn,$createDirTable);
-$queryCreateDirTable = $this->modx->db->query( $createDirTable );
+
+            $queryCreateDirTable = $this->modx->db->query( $createDirTable );
             if (!$queryCreateDirTable) {
                 $_SESSION['easy2err'][] = __LINE__ . ': '
                         . $this->lngi['table'] . ' '
@@ -788,8 +645,7 @@ $queryCreateDirTable = $this->modx->db->query( $createDirTable );
         if ($this->checkField($this->modx->db->config['table_prefix'] . 'easy2_dirs', 'cat_left') !== FALSE
                 && $this->checkField($this->modx->db->config['table_prefix'] . 'easy2_dirs', 'cat_left', 'Type') === 'int(10) unsigned'
         ) {
-            //if (!mysqli_query($this->modx->db->conn,'ALTER TABLE ' . $this->modx->db->config['table_prefix'] . 'easy2_dirs CHANGE cat_left cat_left INT(10) default \'0\' NOT NULL')) {
-if (!$this->modx->db->query( 'ALTER TABLE ' . $this->modx->db->config['table_prefix'] . 'easy2_dirs CHANGE cat_left cat_left INT(10) default \'0\' NOT NULL')) {
+            if (!$this->modx->db->query( 'ALTER TABLE ' . $this->modx->db->config['table_prefix'] . 'easy2_dirs CHANGE cat_left cat_left INT(10) default \'0\' NOT NULL')) {
 
                 $_SESSION['easy2err'][] = __LINE__ . ': '
                         . $this->lngi['field'] . ' '
@@ -805,8 +661,7 @@ if (!$this->modx->db->query( 'ALTER TABLE ' . $this->modx->db->config['table_pre
         // rename field for 1.4.0 RC1
         // cat_tag
         if ($this->checkField($this->modx->db->config['table_prefix'] . 'easy2_dirs', 'cat_tags') !== FALSE) {
-            //if (!mysqli_query($this->modx->db->conn,'ALTER TABLE ' . $this->modx->db->config['table_prefix'] . 'easy2_dirs CHANGE `cat_tags` `cat_tag` VARCHAR(255) DEFAULT NULL NULL')) {
-if (!$this->modx->db->query( 'ALTER TABLE ' . $this->modx->db->config['table_prefix'] . 'easy2_dirs CHANGE `cat_tags` `cat_tag` VARCHAR(255) DEFAULT NULL NULL')) {
+            if (!$this->modx->db->query( 'ALTER TABLE ' . $this->modx->db->config['table_prefix'] . 'easy2_dirs CHANGE `cat_tags` `cat_tag` VARCHAR(255) DEFAULT NULL NULL')) {
 
                 $_SESSION['easy2err'][] = __LINE__ . ': ' . $this->lngi['field'] . ' '
                         . $this->modx->db->config['table_prefix'] . 'easy2_dirs.cat_tag '
@@ -827,8 +682,7 @@ if (!$this->modx->db->query( 'ALTER TABLE ' . $this->modx->db->config['table_pre
         $this->addField('easy2_dirs', 'cat_summary', 'VARCHAR(255) NULL DEFAULT NULL', 'AFTER cat_alias');
 
         if ($this->checkField($this->modx->db->config['table_prefix'] . 'easy2_dirs', 'cat_summary') === FALSE) {
-            //if (!mysqli_query($this->modx->db->conn,'ALTER TABLE ' . $this->modx->db->config['table_prefix'] . 'easy2_dirs ADD cat_summary varchar(255) default NULL AFTER cat_alias')) {
-if (!$this->modx->db->query( 'ALTER TABLE ' . $this->modx->db->config['table_prefix'] . 'easy2_dirs ADD cat_summary varchar(255) default NULL AFTER cat_alias')) {
+            if (!$this->modx->db->query( 'ALTER TABLE ' . $this->modx->db->config['table_prefix'] . 'easy2_dirs ADD cat_summary varchar(255) default NULL AFTER cat_alias')) {
 
                 $_SESSION['easy2err'][] = __LINE__ . ': ' . $this->lngi['field'] . ' '
                         . $this->modx->db->config['table_prefix'] . 'easy2_dirs.cat_summary '
@@ -843,8 +697,7 @@ if (!$this->modx->db->query( 'ALTER TABLE ' . $this->modx->db->config['table_pre
         // rearrange field for 1.4.0 RC1
         // cat_visible
         if ($this->checkField($this->modx->db->config['table_prefix'] . 'easy2_dirs', 'cat_visible') !== FALSE) {
-            //@mysqli_query($this->modx->db->conn,'ALTER TABLE ' . $this->modx->db->config['table_prefix'] . 'easy2_dirs CHANGE `cat_visible` `cat_visible` TINYINT(4) DEFAULT \'1\' NOT NULL AFTER `last_modified`');
-            @$this->modx->db->query( 'ALTER TABLE ' . $this->modx->db->config['table_prefix'] . 'easy2_dirs CHANGE `cat_visible` `cat_visible` TINYINT(4) DEFAULT \'1\' NOT NULL AFTER `last_modified`');
+           @$this->modx->db->query( 'ALTER TABLE ' . $this->modx->db->config['table_prefix'] . 'easy2_dirs CHANGE `cat_visible` `cat_visible` TINYINT(4) DEFAULT \'1\' NOT NULL AFTER `last_modified`');
 
         }
 
@@ -871,18 +724,14 @@ if (!$this->modx->db->query( 'ALTER TABLE ' . $this->modx->db->config['table_pre
         # ENDS UPDATING DIR TABLE FOR 1.4.0 PL   **
         #******************************************
 
-        //$res = mysqli_query($this->modx->db->conn,'SELECT cat_right FROM ' . $this->modx->db->config['table_prefix'] . 'easy2_dirs WHERE cat_id=1');
-$res = $this->modx->db->getValue( $this->modx->db->select( 'cat_right', $this->modx->db->config['table_prefix'] . 'easy2_dirs', 'cat_id="1"' )  );
+        $res = $this->modx->db->getValue( $this->modx->db->select( 'cat_right', $this->modx->db->config['table_prefix'] . 'easy2_dirs', 'cat_id="1"' )  );
 
-        //if (mysqli_num_rows($res) == 0) {
-if ( !$res ) {
+        if ( !$res ) {
             $insertData = 'INSERT INTO ' . $this->modx->db->config['table_prefix'] . 'easy2_dirs '
                     . '(parent_id, cat_id, cat_left, cat_right, cat_level, cat_name, cat_visible) '
                     . 'VALUES (0,1,1,2,0,\'Gallery\',1)';
-            //if (!mysqli_query($this->modx->db->conn,$insertData)) {
-if (!$this->modx->db->query( $insertData )) {
+            if (!$this->modx->db->query( $insertData )) {
                 $_SESSION['easy2err'][] = __LINE__ . ': ' . $this->lngi['data'] . ' ' . $this->modx->db->config['table_prefix'] . 'easy2_dirs ' . $this->lngi['add_err']
-                        //. '<br />' . mysqli_error()
                         . '<br />' . $insertData;
                 $this->chref($index);
             } else {
@@ -892,11 +741,10 @@ if (!$this->modx->db->query( $insertData )) {
 
         // easy2_comments renaming
         if (isset($tab['easy2_comments'])) {
-            //if (!mysqli_query($this->modx->db->conn,'RENAME TABLE easy2_comments TO ' . $this->modx->db->config['table_prefix'] . 'easy2_comments')) {
-if (!$this->modx->db->query( 'RENAME TABLE easy2_comments TO ' . $this->modx->db->config['table_prefix'] . 'easy2_comments')) {
+            if (!$this->modx->db->query( 'RENAME TABLE easy2_comments TO ' . $this->modx->db->config['table_prefix'] . 'easy2_comments')) {
 
-                            $_SESSION['easy2err'][] = __LINE__ . ': ' . $this->lngi['table'] . ' ' . $this->modx->db->config['table_prefix'] . 'easy2_comments ' . $this->lngi['rename_err'];
-                        //. '<br />' . mysqli_error();
+                $_SESSION['easy2err'][] = __LINE__ . ': ' . $this->lngi['table'] . ' ' . $this->modx->db->config['table_prefix'] . 'easy2_comments ' . $this->lngi['rename_err'];
+
                 $this->chref($index);
             }
         }
@@ -923,12 +771,10 @@ if (!$this->modx->db->query( 'RENAME TABLE easy2_comments TO ' . $this->modx->db
                         ENGINE=MyISAM
                         CHARACTER SET ' . $this->databaseCharSet($post['database_collation'], 'Charset') . '
                         COLLATE ' . $this->databaseCharSet($post['database_collation'], 'Collation');
-            //if (!mysqli_query($this->modx->db->conn,$createCommentTable)) {
-if (!$this->modx->db->query( $createCommentTable )) {
+            if (!$this->modx->db->query( $createCommentTable )) {
                         $_SESSION['easy2err'][] = __LINE__ . ': ' . $this->lngi['table'] . ' '
                         . $this->modx->db->config['table_prefix'] . 'easy2_comments '
                         . $this->lngi['create_err']
-                        //. '<br />' . mysqli_error()
                         . '<br />' . $createCommentTable;
                 $this->chref($index);
             } else {
@@ -942,8 +788,7 @@ if (!$this->modx->db->query( $createCommentTable )) {
         // additional field for 1.4.0 Beta1
         // ip_address
         if ($this->checkField($this->modx->db->config['table_prefix'] . 'easy2_comments', 'ip_address') === FALSE) {
-            //if (!mysqli_query($this->modx->db->conn,'ALTER TABLE ' . $this->modx->db->config['table_prefix'] . 'easy2_comments ADD ip_address char(16) NOT NULL AFTER email')) {
-if (!$this->modx->db->query( 'ALTER TABLE ' . $this->modx->db->config['table_prefix'] . 'easy2_comments ADD ip_address char(16) NOT NULL AFTER email')) {
+            if (!$this->modx->db->query( 'ALTER TABLE ' . $this->modx->db->config['table_prefix'] . 'easy2_comments ADD ip_address char(16) NOT NULL AFTER email')) {
 
                 $_SESSION['easy2err'][] = __LINE__ . ': ' . $this->lngi['field'] . ' '
                         . $this->modx->db->config['table_prefix'] . 'easy2_comments.ip_address '
@@ -971,11 +816,10 @@ if (!$this->modx->db->query( 'ALTER TABLE ' . $this->modx->db->config['table_pre
         #***********************************************
         // easy2_files CHECK
         if (isset($tab['easy2_files'])) {
-            //if (!mysqli_query($this->modx->db->conn,'RENAME TABLE easy2_files TO ' . $this->modx->db->config['table_prefix'] . 'easy2_files')) {
-if (!$this->modx->db->query( 'RENAME TABLE easy2_files TO ' . $this->modx->db->config['table_prefix'] . 'easy2_files')) {
+            if (!$this->modx->db->query( 'RENAME TABLE easy2_files TO ' . $this->modx->db->config['table_prefix'] . 'easy2_files')) {
 
                 $_SESSION['easy2err'][] = __LINE__ . ': ' . $this->lngi['table'] . ' ' . $this->modx->db->config['table_prefix'] . 'easy2_files ' . $this->lngi['rename_err'];
-                        //. '<br />' . mysqli_error();
+
                 $this->chref($index);
             }
         }
@@ -1005,12 +849,10 @@ if (!$this->modx->db->query( 'RENAME TABLE easy2_files TO ' . $this->modx->db->c
                         ENGINE=MyISAM
                         CHARACTER SET ' . $this->databaseCharSet($post['database_collation'], 'Charset') . '
                         COLLATE ' . $this->databaseCharSet($post['database_collation'], 'Collation');
-            //if (!mysqli_query($this->modx->db->conn,$createFileTable)) {
-if (!$this->modx->db->query( $createFileTable )) {
+            if (!$this->modx->db->query( $createFileTable )) {
 
                 $_SESSION['easy2err'][] = __LINE__ . ': ' . $this->lngi['table'] . ' ' . $this->modx->db->config['table_prefix'] . 'easy2_files ' . $this->lngi['create_err']
-                        //. '<br />' . mysqli_error()
-                        . '<br />' . $createFileTable;
+                       . '<br />' . $createFileTable;
                 $this->chref($index);
             } else {
                 $_SESSION['easy2suc'][] = __LINE__ . ': ' . $this->lngi['table'] . ' ' . $this->modx->db->config['table_prefix'] . 'easy2_files ' . $this->lngi['created'];
@@ -1020,8 +862,7 @@ if (!$this->modx->db->query( $createFileTable )) {
         // rename field for 1.4.0 RC1
         // tag
         if ($this->checkField($this->modx->db->config['table_prefix'] . 'easy2_files', 'tags') !== FALSE) {
-            //if (!mysqli_query($this->modx->db->conn,'ALTER TABLE ' . $this->modx->db->config['table_prefix'] . 'easy2_files CHANGE `tags` `tag` VARCHAR(255) DEFAULT NULL NULL')) {
-if (!$this->modx->db->query( 'ALTER TABLE ' . $this->modx->db->config['table_prefix'] . 'easy2_files CHANGE `tags` `tag` VARCHAR(255) DEFAULT NULL NULL')) {
+            if (!$this->modx->db->query( 'ALTER TABLE ' . $this->modx->db->config['table_prefix'] . 'easy2_files CHANGE `tags` `tag` VARCHAR(255) DEFAULT NULL NULL')) {
 
                 $_SESSION['easy2err'][] = __LINE__ . ': ' . $this->lngi['field'] . ' '
                         . $this->modx->db->config['table_prefix'] . 'easy2_files.tags '
@@ -1060,8 +901,7 @@ if (!$this->modx->db->query( 'ALTER TABLE ' . $this->modx->db->config['table_pre
         // rename field for 1.4.0 RC4
         // name => alias
         if ($this->checkField($this->modx->db->config['table_prefix'] . 'easy2_files', 'name') !== FALSE) {
-            //if (!mysqli_query($this->modx->db->conn,'ALTER TABLE ' . $this->modx->db->config['table_prefix'] . 'easy2_files CHANGE `name` `alias` VARCHAR(255) DEFAULT NULL NULL')) {
-if (!$this->modx->db->query( 'ALTER TABLE ' . $this->modx->db->config['table_prefix'] . 'easy2_files CHANGE `name` `alias` VARCHAR(255) DEFAULT NULL NULL')) {
+            if (!$this->modx->db->query( 'ALTER TABLE ' . $this->modx->db->config['table_prefix'] . 'easy2_files CHANGE `name` `alias` VARCHAR(255) DEFAULT NULL NULL')) {
 
                 $_SESSION['easy2err'][] = __LINE__ . ': ' . $this->lngi['field'] . ' '
                         . $this->modx->db->config['table_prefix'] . 'easy2_files.name '
@@ -1086,13 +926,12 @@ if (!$this->modx->db->query( 'ALTER TABLE ' . $this->modx->db->config['table_pre
                         ENGINE=MyISAM
                         CHARACTER SET ' . $this->databaseCharSet($post['database_collation'], 'Charset') . '
                         COLLATE ' . $this->databaseCharSet($post['database_collation'], 'Collation');
-            //if (mysqli_query($this->modx->db->conn,$createIgnoreIpTable)) {
-if ( $this->modx->db->query( $createIgnoreIpTable)) {
+            if ( $this->modx->db->query( $createIgnoreIpTable)) {
 
                 $_SESSION['easy2suc'][] = __LINE__ . ': ' . $this->lngi['table'] . ' ' . $this->modx->db->config['table_prefix'] . 'easy2_ignoredip ' . $this->lngi['created'];
             } else {
                 $_SESSION['easy2err'][] = __LINE__ . ': ' . $this->lngi['table'] . ' ' . $this->modx->db->config['table_prefix'] . 'easy2_ignoredip ' . $this->lngi['create_err'];
-                        //. '<br />' . mysqli_error();
+
                 $this->chref($index);
             }
         }
@@ -1110,13 +949,12 @@ if ( $this->modx->db->query( $createIgnoreIpTable)) {
                         ENGINE=MyISAM
                         CHARACTER SET ' . $this->databaseCharSet($post['database_collation'], 'Charset') . '
                         COLLATE ' . $this->databaseCharSet($post['database_collation'], 'Collation');
-            //if (mysqli_query($this->modx->db->conn,$createConfigTable)) {
-if ( $this->modx->db->query( $createConfigTable)) {
+            if ( $this->modx->db->query( $createConfigTable)) {
 
                 $_SESSION['easy2suc'][] = __LINE__ . ': ' . $this->lngi['table'] . ' ' . $this->modx->db->config['table_prefix'] . 'easy2_configs ' . $this->lngi['created'];
             } else {
                 $_SESSION['easy2err'][] = __LINE__ . ': ' . $this->lngi['table'] . ' ' . $this->modx->db->config['table_prefix'] . 'easy2_configs ' . $this->lngi['create_err'];
-                        //. '<br />' . mysqli_error();
+
                 $this->chref($index);
             }
         }
@@ -1135,13 +973,12 @@ if ( $this->modx->db->query( $createConfigTable)) {
                         ENGINE=MyISAM
                         CHARACTER SET ' . $this->databaseCharSet($post['database_collation'], 'Charset') . '
                         COLLATE ' . $this->databaseCharSet($post['database_collation'], 'Collation');
-            //if (mysqli_query($this->modx->db->conn,$createPluginTable)) {
-if ( $this->modx->db->query( $createPluginTable)) {
+            if ( $this->modx->db->query( $createPluginTable)) {
 
                 $_SESSION['easy2suc'][] = __LINE__ . ': ' . $this->lngi['table'] . ' ' . $this->modx->db->config['table_prefix'] . 'easy2_plugins ' . $this->lngi['created'];
             } else {
                 $_SESSION['easy2err'][] = __LINE__ . ': ' . $this->lngi['table'] . ' ' . $this->modx->db->config['table_prefix'] . 'easy2_plugins ' . $this->lngi['create_err'];
-                        //. '<br />' . mysqli_error();
+
                 $this->chref($index);
             }
         }
@@ -1156,13 +993,12 @@ if ( $this->modx->db->query( $createPluginTable)) {
                         ENGINE=MyISAM
                         CHARACTER SET ' . $this->databaseCharSet($post['database_collation'], 'Charset') . '
                         COLLATE ' . $this->databaseCharSet($post['database_collation'], 'Collation');
-            //if (mysqli_query($this->modx->db->conn,$createPluginEventTable)) {
-if ( $this->modx->db->query( $createPluginEventTable)) {
+            if ( $this->modx->db->query( $createPluginEventTable)) {
 
                 $_SESSION['easy2suc'][] = __LINE__ . ': ' . $this->lngi['table'] . ' ' . $this->modx->db->config['table_prefix'] . 'easy2_plugin_events ' . $this->lngi['created'];
             } else {
                 $_SESSION['easy2err'][] = __LINE__ . ': ' . $this->lngi['table'] . ' ' . $this->modx->db->config['table_prefix'] . 'easy2_plugin_events ' . $this->lngi['create_err'];
-                        //. '<br />' . mysqli_error();
+
                 $this->chref($index);
             }
         }
@@ -1179,13 +1015,12 @@ if ( $this->modx->db->query( $createPluginEventTable)) {
                         ENGINE=MyISAM
                         CHARACTER SET ' . $this->databaseCharSet($post['database_collation'], 'Charset') . '
                         COLLATE ' . $this->databaseCharSet($post['database_collation'], 'Collation');
-            //if (mysqli_query($this->modx->db->conn,$createSlideshowTable)) {
-if ( $this->modx->db->query( $createSlideshowTable)) {
+            if ( $this->modx->db->query( $createSlideshowTable)) {
 
                 $_SESSION['easy2suc'][] = __LINE__ . ': ' . $this->lngi['table'] . ' ' . $this->modx->db->config['table_prefix'] . 'easy2_slideshows ' . $this->lngi['created'];
             } else {
                 $_SESSION['easy2err'][] = __LINE__ . ': ' . $this->lngi['table'] . ' ' . $this->modx->db->config['table_prefix'] . 'easy2_slideshows ' . $this->lngi['create_err'];
-                        //. '<br />' . mysqli_error();
+
                 $this->chref($index);
             }
         }
@@ -1203,13 +1038,12 @@ if ( $this->modx->db->query( $createSlideshowTable)) {
                         ENGINE=MyISAM
                         CHARACTER SET ' . $this->databaseCharSet($post['database_collation'], 'Charset') . '
                         COLLATE ' . $this->databaseCharSet($post['database_collation'], 'Collation');
-            //if (mysqli_query($this->modx->db->conn,$createUserMgrTable)) {
-if ( $this->modx->db->query( $createUserMgrTable)) {
+            if ( $this->modx->db->query( $createUserMgrTable)) {
 
                 $_SESSION['easy2suc'][] = __LINE__ . ': ' . $this->lngi['table'] . ' ' . $this->modx->db->config['table_prefix'] . 'easy2_users_mgr ' . $this->lngi['created'];
             } else {
                 $_SESSION['easy2err'][] = __LINE__ . ': ' . $this->lngi['table'] . ' ' . $this->modx->db->config['table_prefix'] . 'easy2_users_mgr ' . $this->lngi['create_err'];
-                        //. '<br />' . mysqli_error();
+
                 $this->chref($index);
             }
         }
@@ -1235,13 +1069,12 @@ if ( $this->modx->db->query( $createUserMgrTable)) {
                         ENGINE=MyISAM
                         CHARACTER SET ' . $this->databaseCharSet($post['database_collation'], 'Charset') . '
                         COLLATE ' . $this->databaseCharSet($post['database_collation'], 'Collation');
-            //if (mysqli_query($this->modx->db->conn,$createViewerTable)) {
-if ( $this->modx->db->query( $createViewerTable)) {
+            if ( $this->modx->db->query( $createViewerTable)) {
 
                 $_SESSION['easy2suc'][] = __LINE__ . ': ' . $this->lngi['table'] . ' ' . $this->modx->db->config['table_prefix'] . 'easy2_viewers ' . $this->lngi['created'];
             } else {
                 $_SESSION['easy2err'][] = __LINE__ . ': ' . $this->lngi['table'] . ' ' . $this->modx->db->config['table_prefix'] . 'easy2_viewers ' . $this->lngi['create_err'];
-                        //. '<br />' . mysqli_error();
+
                 $this->chref($index);
             }
         }
@@ -1258,13 +1091,12 @@ if ( $this->modx->db->query( $createViewerTable)) {
                         ENGINE=MyISAM
                         CHARACTER SET ' . $this->databaseCharSet($post['database_collation'], 'Charset') . '
                         COLLATE ' . $this->databaseCharSet($post['database_collation'], 'Collation');
-            //if (mysqli_query($this->modx->db->conn,$createWebAccessTable)) {
-if ( $this->modx->db->query( $createWebAccessTable)) {
+            if ( $this->modx->db->query( $createWebAccessTable)) {
 
                 $_SESSION['easy2suc'][] = __LINE__ . ': ' . $this->lngi['table'] . ' ' . $this->modx->db->config['table_prefix'] . 'easy2_webgroup_access ' . $this->lngi['created'];
             } else {
                 $_SESSION['easy2err'][] = __LINE__ . ': ' . $this->lngi['table'] . ' ' . $this->modx->db->config['table_prefix'] . 'easy2_webgroup_access ' . $this->lngi['create_err'];
-                        //. '<br />' . mysqli_error();
+
                 $this->chref($index);
             }
         }
@@ -1290,21 +1122,17 @@ if (!empty($moduleFile) && file_exists($moduleFile)) {
                 return FALSE;
             }
 
-            //$select = mysqli_query($this->modx->db->conn,'SELECT modulecode FROM ' . $this->modx->db->config['table_prefix'] . 'site_modules WHERE id =\'' . $_GET['id'] . '\'');
-            //$result = mysqli_use_result($select, 0, 0);
-$result = $this->modx->db->getValue( $this->modx->db->select( 'modulecode', $this->modx->db->config['table_prefix'] . 'site_modules', 'id='.$_GET['id'] ));
+            $result = $this->modx->db->getValue( $this->modx->db->select( 'modulecode', $this->modx->db->config['table_prefix'] . 'site_modules', 'id='.$_GET['id'] ));
 
             if ($result != $moduleCode) {
                 $res = 'UPDATE ' . $this->modx->db->config['table_prefix'] . 'site_modules '
                         . 'SET modulecode = \'' . $this->modx->db->escape($moduleCode)
-                                                //. 'SET modulecode = \'' . mysqli_escape_string($moduleCode)
                         . '\' WHERE id =\'' . $_GET['id'] . '\'';
-                //if (mysqli_query($this->modx->db->conn,$res)) {
-if ( $this->modx->db->query( $res )) {
+                if ( $this->modx->db->query( $res )) {
 
                     $_SESSION['easy2suc'][] = __LINE__ . ': ' . $this->lngi['mod_updated'];
                 } else {
-                    $_SESSION['easy2err'][] = __LINE__ . ': ' . $this->lngi['mod_update_err'] . '<br />';  // . mysqli_error();
+                    $_SESSION['easy2err'][] = __LINE__ . ': ' . $this->lngi['mod_update_err'] . '<br />';
                     $this->chref($index);
                 }
             }
@@ -1330,34 +1158,28 @@ if (!empty($snippetFile) && file_exists($snippetFile)) {
                 return FALSE;
             }
 
-            //$res = mysqli_query($this->modx->db->conn,'SELECT id FROM ' . $this->modx->db->config['table_prefix'] . 'site_snippets WHERE name =\'easy2\'');
-$res = $this->modx->db->getValue( $this->modx->db->select( 'id', $this->modx->db->config['table_prefix'] . 'site_snippets', 'name=easy2' ));
+            $res = $this->modx->db->getValue( $this->modx->db->select( 'id', $this->modx->db->config['table_prefix'] . 'site_snippets', 'name=easy2' ));
 
-            //if (mysqli_num_rows($res) == 0) {
-if (!$res) {
+            if (!$res) {
                 $sql = "INSERT INTO " . $this->modx->db->config['table_prefix'] . "site_snippets "
                         . "(name, description, snippet, moduleguid, locked, properties, category) "
                         . "VALUES('easy2', 'Easy 2 Gallery', '" . $this->modx->db->escape($snippetCode) . "', '', '1','', '0')";
 
-                //if (mysqli_query($this->modx->db->conn,$sql)) {
-if ( $this->modx->db->query( $sql)) {
-                    $post['snippet_id'] = $this->modx->db->getInsertId();  //mysqli_insert_id();
+                if ( $this->modx->db->query( $sql)) {
+                    $post['snippet_id'] = $this->modx->db->getInsertId();
                     $_SESSION['easy2suc'][] = __LINE__ . ': ' . $this->lngi['snippet_added'];
                 } else {
                     $_SESSION['easy2err'][] = __LINE__ . ': ' . $this->lngi['snippet_add_err'];
                     $this->chref($index);
                 }
             } else {
-                //$select = mysqli_query($this->modx->db->conn,'SELECT snippet FROM ' . $this->modx->db->config['table_prefix'] . 'site_snippets WHERE name =\'easy2\'');
-$result = $this->modx->db->getValue( $this->modx->db->select( 'snippet', $this->modx->db->config['table_prefix'] . 'site_snippets', 'name=easy2' ));
+                $result = $this->modx->db->getValue( $this->modx->db->select( 'snippet', $this->modx->db->config['table_prefix'] . 'site_snippets', 'name=easy2' ));
 
-                //$result = mysqli_result($select, 0, 0);
                 if ($result != $snippetCode) {
                     $sql = 'UPDATE ' . $this->modx->db->config['table_prefix'] . 'site_snippets '
                             . 'SET snippet=\'' . $this->modx->db->escape($snippetCode)
                             . '\' WHERE name =\'easy2\'';
-                    //if (mysqli_query($this->modx->db->conn,$sql)) {
-if ( $this->modx->db->query( $sql)) {
+                    if ( $this->modx->db->query( $sql)) {
                         $_SESSION['easy2suc'][] = __LINE__ . ': ' . $this->lngi['snippet_updated'];
                     } else {
                         $_SESSION['easy2err'][] = __LINE__ . ': ' . $this->lngi['snippet_update_err'];
@@ -1386,27 +1208,23 @@ if (!empty($pluginFile) && file_exists($pluginFile)) {
         }
 
         if (empty($post['plugin_id'])) {
-            //$select = 'SELECT id FROM ' . $this->modx->db->config['table_prefix'] . 'site_plugins WHERE name=\'easy2\'';
-            //$query = mysqli_query($this->modx->db->conn,$select);
-            //if (mysqli_num_rows($query) === 0) {
-//$query = $this->modx->db->query( $select);
-$result = $this->modx->db->getValue( $this->modx->db->select( 'id', $this->modx->db->config['table_prefix'] . 'site_plugins', 'name=easy2' ));
+
+            $result = $this->modx->db->getValue( $this->modx->db->select( 'id', $this->modx->db->config['table_prefix'] . 'site_plugins', 'name=easy2' ));
 
             if ( $result =='' ) {
                 $insert = 'INSERT INTO ' . $this->modx->db->config['table_prefix'] . 'site_plugins '
                         . '(name,description,plugincode) '
                         . "VALUES ('easy2', 'Easy 2 Gallery plugin','" . $this->modx->db->escape($pluginCode) . "')"
                 ;
-                //if (mysqli_query($this->modx->db->conn,$insert)) {
-if ( $this->modx->db->query( $insert)) {
-                    $post['plugin_id'] = $this->modx->db->getInsertId();  //mysqli_insert_id();
+                if ( $this->modx->db->query( $insert)) {
+                    $post['plugin_id'] = $this->modx->db->getInsertId();
                     $_SESSION['easy2suc'][] = __LINE__ . ': ' . $this->lngi['plugin_added'];
                 } else {
                     $_SESSION['easy2err'][] = __LINE__ . ': ' . $this->lngi['plugin_add_err'];
                     $this->chref($index);
                 }
             } else {
-                $post['plugin_id'] = $result;  //mysqli_result($query, 0, 0);
+                $post['plugin_id'] = $result;
             }
         } else {
             $post['plugin_id'] = !empty($post['plugin_id']) ? $post['plugin_id'] : $this->e2g['plugin_id'];
@@ -1415,8 +1233,7 @@ if ( $this->modx->db->query( $insert)) {
         // PLUGIN EVENTS
         if (!empty($post['plugin_id'])) {
             $nEvtIds = array('90', '94'); // Plugin event's IDs. Will be added more later.
-            //$delete = mysqli_query($this->modx->db->conn,'DELETE FROM ' . $this->modx->db->config['table_prefix'] . 'site_plugin_events WHERE pluginid=\'' . $post['plugin_id'] . '\'');
-$delete = $this->modx->db->query( 'DELETE FROM ' . $this->modx->db->config['table_prefix'] . 'site_plugin_events WHERE pluginid=\'' . $post['plugin_id'] . '\'');
+            $delete = $this->modx->db->query( 'DELETE FROM ' . $this->modx->db->config['table_prefix'] . 'site_plugin_events WHERE pluginid=\'' . $post['plugin_id'] . '\'');
 
             if ($delete) {
                 foreach ($nEvtIds as $nEvtId) {
@@ -1426,19 +1243,16 @@ $delete = $this->modx->db->query( 'DELETE FROM ' . $this->modx->db->config['tabl
                     );
                 }
             } else {
-                $_SESSION['easy2err'][] = __LINE__ . ': Error: insert site_plugin_events';  //' . mysqli_error();
+                $_SESSION['easy2err'][] = __LINE__ . ': Error: insert site_plugin_events';
             }
 
-            //$select = mysqli_query($this->modx->db->conn,'SELECT plugincode FROM ' . $this->modx->db->config['table_prefix'] . 'site_plugins WHERE id =\'' . $post['plugin_id'] . '\'');
-            //$result = mysqli_result($select, 0, 0);
-$result = $this->modx->db->getValue( $this->modx->db->select( 'plugincode', $this->modx->db->config['table_prefix'] . 'site_plugins', 'id='.$post['plugin_id'] ));
+            $result = $this->modx->db->getValue( $this->modx->db->select( 'plugincode', $this->modx->db->config['table_prefix'] . 'site_plugins', 'id='.$post['plugin_id'] ));
 
             if ($result != $pluginCode) {
                 $res = 'UPDATE ' . $this->modx->db->config['table_prefix'] . 'site_plugins '
                         . 'SET plugincode = \'' . $this->modx->db->escape($pluginCode)
                         . '\' WHERE id =\'' . $post['plugin_id'] . '\'';
-                //if (mysqli_query($this->modx->db->conn,$res)) {
-if ( $this->modx->db->query( $res)) {
+                if ( $this->modx->db->query( $res)) {
                     $_SESSION['easy2suc'][] = __LINE__ . ': ' . $this->lngi['plugin_updated'];
                 } else {
                     $_SESSION['easy2err'][] = __LINE__ . ': ' . $this->lngi['plugin_update_err'] . '<br />';  // . mysqli_error();
@@ -1469,6 +1283,9 @@ if ( $this->modx->db->query( $res)) {
         $_SESSION['installE2g'] = FALSE;
         unset($_SESSION['installE2g']);
 
+        // empty cache
+        $this->modx->clearCache( 'full' );
+
         $this->chref($index);
     }
 
@@ -1476,12 +1293,7 @@ if ( $this->modx->db->query( $res)) {
         // check and update the parent directory
         $sqlConfigDir = 'SELECT * FROM ' . $this->modx->db->config['table_prefix'] . 'easy2_configs '
                 . 'WHERE cfg_key=\'' . $cfgKey . '\'';
-        /*
-        $query = mysqli_query($this->modx->db->conn,$sqlConfigDir);
-        while ($row = mysqli_fetch_assoc($query)) {
-            $resultConfigDir[$row['cfg_key']] = $row['cfg_val'];
-        }
-        */
+
         $cfg = $this->modx->db->makeArray( $this->modx->db->query( $sqlConfigDir ));
         foreach ( $cfg as $v ) {
             $resultConfigDir[$v['cfg_key']] = $v['cfg_val'];
@@ -1507,13 +1319,7 @@ if ( $this->modx->db->query( $res)) {
     private function _installViewers() {
         $viewers = include_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'viewers.php';
         $select = 'SELECT * FROM `' . $this->modx->db->config['table_prefix'] . "easy2_viewers` ";
-        /*
-        $result = mysqli_query($this->modx->db->conn,$select);
 
-        while ($l = mysqli_fetch_assoc($result)) {
-            $viewerRow[$l['name']] = $l;
-        }
-        */
         $cfg = $this->modx->db->makeArray( $this->modx->db->query( $select ));
         foreach ( $cfg as $v ) {
             $viewerRow[$v['name']] = $v;
@@ -1550,8 +1356,7 @@ if (IN_MANAGER_MODE != 'true')
                     if ($x === 'id' || $x === 'name') {
                         continue;
                     }
-                    //$c .= "\t\t\"$x\" => \"" . mysqli_real_escape_string($this->modx->db->conn,$y) . "\",\r\n";
-$c .= "\t\t\"$x\" => \"" . $this->modx->db->escape( $y ) . "\",\r\n";
+                    $c .= "\t\t\"$x\" => \"" . $this->modx->db->escape( $y ) . "\",\r\n";
                 }
                 $c .= "\t),\r\n";
             }
@@ -1569,21 +1374,18 @@ $c .= "\t\t\"$x\" => \"" . $this->modx->db->escape( $y ) . "\",\r\n";
                     $countFields = count($v);
                     $i = 0;
                     $query = 'INSERT INTO `' . $this->modx->db->config['table_prefix'] . 'easy2_viewers` SET ';
-                    //$query .= '`name` = \'' . mysqli_real_escape_string($this->modx->db->conn,$name) . '\',';
-$query .= '`name` = \'' . $this->modx->db->escape( $name ) . '\',';
+                    $query .= '`name` = \'' . $this->modx->db->escape( $name ) . '\',';
 
                     foreach ($v as $field => $value) {
                         $i++;
-                        //$query .= '`' . $field . '` = \'' . mysqli_real_escape_string($this->modx->db->conn,$value) . '\'';
-$query .= '`' . $field . '` = \'' . $this->modx->db->escape( $value ) . '\'';
+                        $query .= '`' . $field . '` = \'' . $this->modx->db->escape( $value ) . '\'';
 
                         if ($i < $countFields) {
                             $query .= ',';
                         }
                     }
-                    //if (!mysqli_query($this->modx->db->conn,$query)) {
-if (!$this->modx->db->query( $query )) {
-                        $_SESSION['easy2err'][] = __LINE__ . ': ' . 'mysqli ERROR: insert viewers';  // . mysqli_error();
+                    if (!$this->modx->db->query( $query )) {
+                        $_SESSION['easy2err'][] = __LINE__ . ': ' . 'mysqli ERROR: insert viewers';
                         $_SESSION['easy2err'][] = $query;
                     }
                 }
@@ -1600,13 +1402,7 @@ if (!$this->modx->db->query( $query )) {
     private function _installSlideshows() {
         $slideshows = include_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'slideshows.php';
         $select = 'SELECT * FROM `' . $this->modx->db->config['table_prefix'] . "easy2_slideshows` ";
-        /*
-        $result = mysqli_query($this->modx->db->conn,$select);
 
-        while ($l = mysqli_fetch_assoc($result)) {
-            $slideshowRow[$l['name']] = $l;
-        }
-        */
         $cfg = $this->modx->db->makeArray( $this->modx->db->query( $select ));
         foreach ( $cfg as $v ) {
             $slideshowRow[$v['name']] = $v;
@@ -1642,8 +1438,7 @@ if (IN_MANAGER_MODE != 'true')
                     if ($x === 'id' || $x === 'name') {
                         continue;
                     }
-                    //$c .= "\t\t\"$x\" => \"" . mysqli_real_escape_string($this->modx->db->conn,$y) . "\",\r\n";
-$c .= "\t\t\"$x\" => \"" . $this->modx->db->escape( $y) . "\",\r\n";
+                    $c .= "\t\t\"$x\" => \"" . $this->modx->db->escape( $y) . "\",\r\n";
 
                 }
                 $c .= "\t),\r\n";
@@ -1662,21 +1457,18 @@ $c .= "\t\t\"$x\" => \"" . $this->modx->db->escape( $y) . "\",\r\n";
                     $countFields = count($v);
                     $i = 0;
                     $query = 'INSERT INTO `' . $this->modx->db->config['table_prefix'] . 'easy2_slideshows` SET ';
-                    //$query .= '`name` = \'' . mysqli_real_escape_string($this->modx->db->conn,$name) . '\',';
-$query .= '`name` = \'' . $this->modx->db->escape( $name ) . '\',';
+                    $query .= '`name` = \'' . $this->modx->db->escape( $name ) . '\',';
 
                     foreach ($v as $field => $value) {
                         $i++;
-                        //$query .= '`' . $field . '` = \'' . mysqli_real_escape_string($this->modx->db->conn,$value) . '\'';
-$query .= '`' . $field . '` = \'' . $this->modx->db->escape( $value ) . '\'';
+                        $query .= '`' . $field . '` = \'' . $this->modx->db->escape( $value ) . '\'';
 
                         if ($i < $countFields) {
                             $query .= ',';
                         }
                     }
-                    //if (!mysqli_query($this->modx->db->conn,$query)) {
-if (!$this->modx->db->query( $query )) {
-                        $_SESSION['easy2err'][] = __LINE__ . ': ' . 'mysqli ERROR: insert slideshows';  //. mysqli_error();
+                    if (!$this->modx->db->query( $query )) {
+                        $_SESSION['easy2err'][] = __LINE__ . ': ' . 'mysqli ERROR: insert slideshows';
                         $_SESSION['easy2err'][] = $query;
                     }
                 }

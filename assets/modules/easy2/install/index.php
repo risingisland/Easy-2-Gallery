@@ -30,29 +30,21 @@ if (isset($_GET['p']) && $_GET['p'] == 'del_inst_dir') {
 } else {
     // SNIPPET
     if (empty($e2g['snippet_id']) || $e2g['snippet_id'] == '') {
-        /*
-                $select = mysql_query('SELECT id FROM ' . $modx->db->config['table_prefix'] . 'site_snippets WHERE name =\'easy2\'');
-        if (mysql_num_rows($select) > 0)
-            $snippetId = mysql_result($select, 0, 0);
-        mysql_free_result($select);        
-                */
-                $snippetId = $modx->db->getValue( $modx->db->select( 'id', $modx->db->config['table_prefix'] . 'site_snippets', 'name ="easy2"' )  );
+
+        $snippetId = $modx->db->getValue( $modx->db->select( 'id', $modx->db->config['table_prefix'] . 'site_snippets', 'name ="easy2"' )  );
 
     } else {
+    
         $snippetId = $e2g['snippet_id'];
     }
 
     // PLUGIN
     if (empty($e2g['plugin_id']) || $e2g['plugin_id'] == '') {
-        /*
-                $select = mysql_query('SELECT id FROM ' . $modx->db->config['table_prefix'] . 'site_plugins WHERE name=\'easy2\'');
-        if (mysql_num_rows($select) > 0)
-            $pluginId = mysql_result($select, 0, 0);
-        mysql_free_result($select);
-                */
-                $pluginId = $modx->db->getValue( $modx->db->select( 'id', $modx->db->config['table_prefix'] . 'site_plugins', 'name ="easy2"' )  );
+
+        $pluginId = $modx->db->getValue( $modx->db->select( 'id', $modx->db->config['table_prefix'] . 'site_plugins', 'name ="easy2"' )  );
 
     } else {
+    
         $pluginId = $e2g['plugin_id'];
     }
     ?>
@@ -118,15 +110,6 @@ if (isset($_GET['p']) && $_GET['p'] == 'del_inst_dir') {
 
                                 echo '<li>';
 
-                               
-                                                                
-                                //$getChr = mysqli_query($modx->db->conn,"SHOW CHARACTER SETS");
-
-                                //$getChr = $modx->db->query( "SHOW CHARACTER SETS" );
-                                
-                                // get collation
-                                //$getCol = mysqli_query($modx->db->conn,"SHOW COLLATION");
-                                
                                 $getCol = $modx->db->makeArray($modx->db->query( "SHOW COLLATION" ));
                                 
                                 $showVars = $modx->db->makeArray( $modx->db->query("SHOW VARIABLES" ));
@@ -135,21 +118,11 @@ if (isset($_GET['p']) && $_GET['p'] == 'del_inst_dir') {
                                 }
                                 $databaseCollation = $mysqlVars['collation_database'];
 
-                                // used in install.class.php  line 603
-                                //$_SESSION['e2g_db_collation'] = $databaseCollation;
-                                
-                                //if (@mysqli_num_rows($getCol) > 0) {
                                 if ( count( $getCol ) > 0 ) {
                                     $output = "\n" . 'Database collation <select id="database_collation" name="database_collation">' . "\n";
-                                    //while ($row = mysqli_fetch_assoc($getCol)) {
-                                    //    $cola[$row['Collation']] = $row;
-                                    //}
-                                    //while ( $row = mysqli_fetch_assoc( $getCol )) {
-                                    //    $cola[$row['Collation']] = $row;
-                                    //}
+
                                     foreach( $getCol as $k => $v ){
 
-                                        //$e2g[$v['cfg_key']] = $v['cfg_val'];
                                         $cola[$v['Collation']] = $v;
                                     }
                                     
@@ -162,23 +135,8 @@ if (isset($_GET['p']) && $_GET['p'] == 'del_inst_dir') {
                                     $output .= '</select>' . "\n";
                                 }
                                                                 
-                                                                
-                                                                /*
-                                                                //$getChr = mysql_query("SHOW CHARACTER SETS");
-                                                                $getChr = mysqli_get_charset( $modx->db->conn );
-                                                                //print_r($getChr);
-                                                                foreach($getChr as $k => $v){
-                                                                    // echo $k .'-'.$v.'<br>';
-                                                                          if($k =='collation'){
-                                                                                  $databaseCollation =$v;
-                                                                          }
-                                                                }
-                                                                $output = "\n" . 'Database collation <select id="database_collation" name="database_collation">' . "\n";
-                                $output .= '<option value="' . $databaseCollation . '" selected>' . $databaseCollation . '</option>' . "\n";
-                                $output .= '</select>' . "\n";      
-                                */
-                                                                
-                                                                echo $output;
+                                echo $output;
+                                
                                 echo '</li>';
 
                                 // PHP version

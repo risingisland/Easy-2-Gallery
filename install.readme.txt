@@ -20,7 +20,7 @@ return $o;
 4. Refresh modx manager, then open the module tab.
 5. Install following instructions.
 6. If install is successful, remove install folder, manually or by clicking delete button. module won't work if this folder exists.
-7. See IMPORTANT!!!! below.
+
 
 
 Upgrade
@@ -34,18 +34,6 @@ Upgrade
 2. Open the module tab, upgrade following instructions
 3. If upgrade is successful, remove install folder, manually or by clicking delete button. module won't work if this folder exists.
 4. CLEAR MODX CACHE
-
-
-IMPORTANT!!!!
-
-Open one of the following in edit mode:
-easy2gallery snippet
-easy2gallery plugin
-easy2gallery module
-
-click save.
-
-For some reason the galleries do not function correctly until this is done.
 
 
 
