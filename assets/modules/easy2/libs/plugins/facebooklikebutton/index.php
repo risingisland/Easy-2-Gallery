@@ -31,7 +31,7 @@ if (!function_exists('facebookLikeButton')) {
 
 }
 
-$modx->regClientStartupScript('assets/libs/plugins/facebooklikebutton/e2g.facebooklikebutton.css');
+$modx->regClientStartupScript('assets/modules/easy2/libs/plugins/facebooklikebutton/e2g.facebooklikebutton.css');
 
 switch ($e2gEvtName) {
     case 'OnE2GWebThumbRender':

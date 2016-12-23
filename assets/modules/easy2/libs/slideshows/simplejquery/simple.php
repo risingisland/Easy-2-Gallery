@@ -33,7 +33,7 @@ if ($ssFiles['count'] == 0) {
 if (!empty($ssParams['ss_css'])) {
     $modx->regClientCSS($ssParams['ss_css'], 'screen');
 } else {
-    $modx->regClientCSS(MODX_BASE_URL . 'assets/libs/slideshows/simplejquery/simple.css', 'screen');
+    $modx->regClientCSS(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/simplejquery/simple.css', 'screen');
     // amend dimension variables into CSS
     $modx->regClientStartupHTMLBlock('
         <style type="text/css" media="screen">
@@ -46,12 +46,12 @@ if (!empty($ssParams['ss_css'])) {
             ');
 }
 
-$modx->regClientStartupScript(MODX_BASE_URL . 'assets/libs/jquery/jquery-1.4.2.min.js');
+$modx->regClientStartupScript(MODX_BASE_URL . 'assets/modules/easy2/libs/jquery/jquery-1.4.2.min.js');
 
 if (!empty($ssParams['ss_js'])) {
     $modx->regClientStartupScript($ssParams['ss_js']);
 } else {
-    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/libs/slideshows/simplejquery/simple.js');
+    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/simplejquery/simple.js');
 }
 
 // start create the slideshow box

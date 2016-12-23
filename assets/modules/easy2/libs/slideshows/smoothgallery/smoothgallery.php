@@ -29,8 +29,8 @@ if (!isset($ssParams['ss_config']))
 //**************************************************/
 //*            PREPARE THE HTML HEADERS            */
 //**************************************************/
-$modx->regClientCSS(MODX_BASE_URL . 'assets/libs/slideshows/smoothgallery/css/jd.gallery.css', 'screen');
-$modx->regClientCSS(MODX_BASE_URL . 'assets/libs/slideshows/smoothgallery/css/smoothgallery.css', 'screen');
+$modx->regClientCSS(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/smoothgallery/css/jd.gallery.css', 'screen');
+$modx->regClientCSS(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/smoothgallery/css/smoothgallery.css', 'screen');
 // defining the dimension in CSS style
 $modx->regClientStartupHTMLBlock('
         <style type="text/css" media="screen">
@@ -45,7 +45,7 @@ $modx->regClientStartupHTMLBlock('
         }
         </style>');
 if ($ssParams['ss_config'] == 'zoom') {
-    $modx->regClientCSS(MODX_BASE_URL . 'assets/libs/slideshows/smoothgallery/css/ReMooz.css', 'screen');
+    $modx->regClientCSS(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/smoothgallery/css/ReMooz.css', 'screen');
 }
 if (!empty($ssParams['ss_css'])) {
     $modx->regClientCSS($ssParams['ss_css'], 'screen');
@@ -55,9 +55,9 @@ $modx->regClientStartupHTMLBlock('
         <script type="text/javascript">jQuery.noConflict();</script>');
 
 if ($ssParams['ss_config'] == 'fullgallery') {
-    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/libs/slideshows/smoothgallery/scripts/mootools-1.2.1-core-yc.js');
-    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/libs/slideshows/smoothgallery/scripts/mootools-1.2-more.js');
-    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/libs/slideshows/smoothgallery/scripts/jd.gallery.js');
+    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/smoothgallery/scripts/mootools-1.2.1-core-yc.js');
+    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/smoothgallery/scripts/mootools-1.2-more.js');
+    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/smoothgallery/scripts/jd.gallery.js');
     $modx->regClientStartupHTMLBlock('
         <script type="text/javascript">
             function startGallery() {
@@ -70,12 +70,12 @@ if ($ssParams['ss_config'] == 'fullgallery') {
         ');
 }
 if ($ssParams['ss_config'] == 'galleryset') {
-    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/libs/slideshows/smoothgallery/scripts/mootools-1.2.1-core-yc.js');
-    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/libs/slideshows/smoothgallery/scripts/mootools-1.2-more.js');
-    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/libs/slideshows/smoothgallery/scripts/jd.gallery.js');
-    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/libs/slideshows/smoothgallery/scripts/History.js');
-    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/libs/slideshows/smoothgallery/scripts/History.Routing.js');
-    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/libs/slideshows/smoothgallery/scripts/jd.gallery.set.js');
+    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/smoothgallery/scripts/mootools-1.2.1-core-yc.js');
+    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/smoothgallery/scripts/mootools-1.2-more.js');
+    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/smoothgallery/scripts/jd.gallery.js');
+    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/smoothgallery/scripts/History.js');
+    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/smoothgallery/scripts/History.Routing.js');
+    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/smoothgallery/scripts/jd.gallery.set.js');
     $modx->regClientStartupHTMLBlock('
         <script type="text/javascript">
             window.addEvent(\'domready\', function() {
@@ -87,10 +87,10 @@ if ($ssParams['ss_config'] == 'galleryset') {
         ');
 }
 if ($ssParams['ss_config'] == 'timedgallery') {
-    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/libs/slideshows/smoothgallery/scripts/mootools.v1.11.js');
-    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/libs/slideshows/smoothgallery/scripts/jd.gallery.v2.js');
-    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/libs/slideshows/smoothgallery/scripts/jd.gallery.set.js');
-    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/libs/slideshows/smoothgallery/scripts/jd.gallery.transitions.js');
+    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/smoothgallery/scripts/mootools.v1.11.js');
+    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/smoothgallery/scripts/jd.gallery.v2.js');
+    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/smoothgallery/scripts/jd.gallery.set.js');
+    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/smoothgallery/scripts/jd.gallery.transitions.js');
     $modx->regClientStartupHTMLBlock('
         <script type="text/javascript">
             function startGallery() {
@@ -103,9 +103,9 @@ if ($ssParams['ss_config'] == 'timedgallery') {
         ');
 }
 if ($ssParams['ss_config'] == 'simpletimedslideshow') {
-    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/libs/slideshows/smoothgallery/scripts/mootools-1.2.1-core-yc.js');
-    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/libs/slideshows/smoothgallery/scripts/mootools-1.2-more.js');
-    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/libs/slideshows/smoothgallery/scripts/jd.gallery.js');
+    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/smoothgallery/scripts/mootools-1.2.1-core-yc.js');
+    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/smoothgallery/scripts/mootools-1.2-more.js');
+    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/smoothgallery/scripts/jd.gallery.js');
     $modx->regClientStartupHTMLBlock('
         <script type="text/javascript">
             function startGallery() {
@@ -120,11 +120,11 @@ if ($ssParams['ss_config'] == 'simpletimedslideshow') {
         ');
 }
 if ($ssParams['ss_config'] == 'simpleshowcaseslideshow') {
-    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/libs/slideshows/smoothgallery/scripts/mootools.v1.11.js');
-    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/libs/slideshows/smoothgallery/scripts/HistoryManager.js');
-    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/libs/slideshows/smoothgallery/scripts/jd.gallery.v2.js');
-    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/libs/slideshows/smoothgallery/scripts/jd.gallery.set.js');
-    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/libs/slideshows/smoothgallery/scripts/jd.gallery.transitions.js');
+    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/smoothgallery/scripts/mootools.v1.11.js');
+    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/smoothgallery/scripts/HistoryManager.js');
+    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/smoothgallery/scripts/jd.gallery.v2.js');
+    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/smoothgallery/scripts/jd.gallery.set.js');
+    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/smoothgallery/scripts/jd.gallery.transitions.js');
     $modx->regClientStartupHTMLBlock('
         <script type="text/javascript">
             function startGallery() {
@@ -141,11 +141,11 @@ if ($ssParams['ss_config'] == 'simpleshowcaseslideshow') {
         ');
 }
 if ($ssParams['ss_config'] == 'timedimageswitchers') {
-    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/libs/slideshows/smoothgallery/scripts/mootools.v1.11.js');
-    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/libs/slideshows/smoothgallery/scripts/HistoryManager.js');
-    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/libs/slideshows/smoothgallery/scripts/jd.gallery.v2.js');
-    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/libs/slideshows/smoothgallery/scripts/jd.gallery.set.js');
-    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/libs/slideshows/smoothgallery/scripts/jd.gallery.transitions.js');
+    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/smoothgallery/scripts/mootools.v1.11.js');
+    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/smoothgallery/scripts/HistoryManager.js');
+    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/smoothgallery/scripts/jd.gallery.v2.js');
+    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/smoothgallery/scripts/jd.gallery.set.js');
+    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/smoothgallery/scripts/jd.gallery.transitions.js');
     $modx->regClientStartupHTMLBlock('
         <script type="text/javascript">
 			function startGallery() {
@@ -164,11 +164,11 @@ if ($ssParams['ss_config'] == 'timedimageswitchers') {
         ');
 }
 if ($ssParams['ss_config'] == 'slidingtransition') {
-    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/libs/slideshows/smoothgallery/scripts/mootools.v1.11.js');
-    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/libs/slideshows/smoothgallery/scripts/HistoryManager.js');
-    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/libs/slideshows/smoothgallery/scripts/jd.gallery.v2.js');
-    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/libs/slideshows/smoothgallery/scripts/jd.gallery.set.js');
-    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/libs/slideshows/smoothgallery/scripts/jd.gallery.transitions.js');
+    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/smoothgallery/scripts/mootools.v1.11.js');
+    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/smoothgallery/scripts/HistoryManager.js');
+    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/smoothgallery/scripts/jd.gallery.v2.js');
+    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/smoothgallery/scripts/jd.gallery.set.js');
+    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/smoothgallery/scripts/jd.gallery.transitions.js');
     $modx->regClientStartupHTMLBlock('
         <script type="text/javascript">
             function startGallery() {
@@ -184,10 +184,10 @@ if ($ssParams['ss_config'] == 'slidingtransition') {
         ');
 }
 if ($ssParams['ss_config'] == 'horcontinuous') {
-    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/libs/slideshows/smoothgallery/scripts/mootools-1.2.1-core-yc.js');
-    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/libs/slideshows/smoothgallery/scripts/mootools-1.2-more.js');
-    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/libs/slideshows/smoothgallery/scripts/jd.gallery.js');
-    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/libs/slideshows/smoothgallery/scripts/jd.gallery.transitions.js');
+    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/smoothgallery/scripts/mootools-1.2.1-core-yc.js');
+    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/smoothgallery/scripts/mootools-1.2-more.js');
+    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/smoothgallery/scripts/jd.gallery.js');
+    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/smoothgallery/scripts/jd.gallery.transitions.js');
     $modx->regClientStartupHTMLBlock('
         <script type="text/javascript">
 			function startGallery() {
@@ -201,10 +201,10 @@ if ($ssParams['ss_config'] == 'horcontinuous') {
         ');
 }
 if ($ssParams['ss_config'] == 'vercontinuous') {
-    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/libs/slideshows/smoothgallery/scripts/mootools-1.2.1-core-yc.js');
-    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/libs/slideshows/smoothgallery/scripts/mootools-1.2-more.js');
-    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/libs/slideshows/smoothgallery/scripts/jd.gallery.js');
-    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/libs/slideshows/smoothgallery/scripts/jd.gallery.transitions.js');
+    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/smoothgallery/scripts/mootools-1.2.1-core-yc.js');
+    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/smoothgallery/scripts/mootools-1.2-more.js');
+    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/smoothgallery/scripts/jd.gallery.js');
+    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/smoothgallery/scripts/jd.gallery.transitions.js');
     $modx->regClientStartupHTMLBlock('
         <script type="text/javascript">
 			function startGallery() {
@@ -218,10 +218,10 @@ if ($ssParams['ss_config'] == 'vercontinuous') {
         ');
 }
 if ($ssParams['ss_config'] == 'zoom') {
-    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/libs/slideshows/smoothgallery/scripts/mootools-1.2.1-core-yc.js');
-    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/libs/slideshows/smoothgallery/scripts/mootools-1.2-more.js');
-    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/libs/slideshows/smoothgallery/scripts/ReMooz.js');
-    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/libs/slideshows/smoothgallery/scripts/jd.gallery.js');
+    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/smoothgallery/scripts/mootools-1.2.1-core-yc.js');
+    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/smoothgallery/scripts/mootools-1.2-more.js');
+    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/smoothgallery/scripts/ReMooz.js');
+    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/smoothgallery/scripts/jd.gallery.js');
     $modx->regClientStartupHTMLBlock('
         <script type="text/javascript">
 			function startGallery() {

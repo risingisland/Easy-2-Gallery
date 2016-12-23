@@ -185,14 +185,14 @@ if (isset($_GET['p']) && $_GET['p'] == 'del_inst_dir') {
                                 }
 
                                 // Easy 2 javascript library folders
-                                if (is_dir('../assets/libs')) {
+                                if (is_dir('../assets/modules/easy2/libs')) {
                                     echo '<li>';
-                                    echo $iconOk . 'assets/libs';
+                                    echo $iconOk . 'assets/modules/easy2/libs';
                                     echo '</li>';
                                 } else {
                                     $disabled = 'disabled="disabled"';
                                     echo '<li>';
-                                    echo $iconBad . 'assets/libs';
+                                    echo $iconBad . 'assets/modules/easy2/libs';
                                     echo '</li>';
                                 }
 

@@ -56,8 +56,7 @@ if (IN_MANAGER_MODE != 'true')
                             <a href="<?php echo $this->e2gModCfg['index'] . '&amp;act=delete_viewer&amp;viewer_id=' . $row['id']; ?>"
                                onclick="return confirm('<?php echo $this->lng['js_delete_viewer_confirm']; ?>')"
                                title="<?php echo $this->lng['duplicate']; ?>">
-                                <img src="<?php echo MODX_MANAGER_URL; ?>media/style/<?php echo $this->modx->config['manager_theme'];?>/images/icons/delete.gif"
-                                     width="16" height="16" border="0" alt="" />
+                                <i class="icon-custom bordered-2x icon-bg-red fa fa-trash icon-vs"></i>
                             </a>
                             <?php echo ($row['disabled'] == 1 ? '<span class="disabled">' : ''); ?>
                             <a href="<?php echo $this->e2gModCfg['index'] . '&amp;page=edit_viewer&amp;viewer_id=' . $row['id']; ?>" title="edit"><b><?php echo $row['name']; ?></b></a>

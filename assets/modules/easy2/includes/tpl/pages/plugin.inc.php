@@ -198,8 +198,7 @@ if (IN_MANAGER_MODE != 'true')
                             <a href="<?php echo $this->e2gModCfg['index'] . '&amp;act=delete_plugin&amp;plugin_id=' . $row['id'];?>"
                                onclick="confirm('<?php echo $this->lng['js_delete_plugin_confirm']; ?>')"
                                title="<?php echo $this->lng['delete']; ?>">
-                                <img src="<?php echo MODX_MANAGER_URL; ?>media/style/<?php echo $this->modx->config['manager_theme']; ?>/images/icons/delete.gif"
-                                     width="16" height="16" border="0" alt="" />
+                                <i class="icon-custom bordered-2x icon-bg-red fa fa-trash icon-vs"></i>
                             </a>
                             <?php echo ($row['disabled'] == 1 ? '<span class="disabled">' : ''); ?>
                             <a href="<?php echo $this->e2gModCfg['index'] . '&amp;page=edit_plugin&amp;ssid=' . $row['id']; ?>" title="edit"><b><?php echo $row['name']; ?></b></a>

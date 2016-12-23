@@ -1,8 +1,8 @@
 
-Extract this to assets/libs/plugins/facebooklikebutton/
+Extract this to assets/modules/easy2/libs/plugins/facebooklikebutton/
 
 If you need to change any settings, you can edit the template file:
-assets/libs/plugins/facebooklikebutton/e2g.facebooklikebutton.tpl
+assets/modules/easy2/libs/plugins/facebooklikebutton/e2g.facebooklikebutton.tpl
 
 You need to add the plugin into the database:
     1. Menu > Plugins > Add tab >
@@ -11,7 +11,7 @@ You need to add the plugin into the database:
         Name: facebooklikebutton
         Description : Facebook Like Button
         Plugin disabled : Check (unless you want to enable this as the default, uncheck this)
-        Index file : assets/libs/plugins/facebooklikebutton/index.php
+        Index file : assets/modules/easy2/libs/plugins/facebooklikebutton/index.php
         System Events : check "OnE2GWebThumbRender (thumb:pluginName#render)"
 
     3. SAVE.

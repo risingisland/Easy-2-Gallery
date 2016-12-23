@@ -42,10 +42,10 @@ if (!isset($ssParams['ss_config'])) {
 if (!empty($ssParams['ss_css'])) {
     $modx->regClientCSS($ssParams['ss_css'], 'screen');
 } else {
-    $modx->regClientCSS(MODX_BASE_URL . 'assets/libs/slideshows/galleryview/galleryview.css', 'screen');
+    $modx->regClientCSS(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/galleryview/galleryview.css', 'screen');
 }
 if ($ssParams['ss_config'] == 'polaroid') {
-    $modx->regClientCSS(MODX_BASE_URL . 'assets/libs/slideshows/galleryview/themes/polaroid/polaroid.css', 'screen');
+    $modx->regClientCSS(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/galleryview/themes/polaroid/polaroid.css', 'screen');
 }
 if (empty($ssParams['ss_css'])) {
     // defining the dimension in CSS style
@@ -62,10 +62,10 @@ if (empty($ssParams['ss_css'])) {
         </style>
         ');
 }
-$modx->regClientStartupScript(MODX_BASE_URL . 'assets/libs/jquery/jquery-1.3.2.min.js');
-$modx->regClientStartupScript(MODX_BASE_URL . 'assets/libs/slideshows/galleryview/jquery.easing.1.3.js');
-$modx->regClientStartupScript(MODX_BASE_URL . 'assets/libs/slideshows/galleryview/jquery.galleryview-1.1.js');
-$modx->regClientStartupScript(MODX_BASE_URL . 'assets/libs/slideshows/galleryview/jquery.timers-1.1.2.js');
+$modx->regClientStartupScript(MODX_BASE_URL . 'assets/modules/easy2/libs/jquery/jquery-1.3.2.min.js');
+$modx->regClientStartupScript(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/galleryview/jquery.easing.1.3.js');
+$modx->regClientStartupScript(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/galleryview/jquery.galleryview-1.1.js');
+$modx->regClientStartupScript(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/galleryview/jquery.timers-1.1.2.js');
 $modx->regClientStartupHTMLBlock('
         <script type="text/javascript">jQuery.noConflict();</script>');
 if ($ssParams['ss_config'] == 'gallerylight') {

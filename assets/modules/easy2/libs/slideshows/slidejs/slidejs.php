@@ -24,16 +24,16 @@ if (!defined('E2G_SNIPPET_URL') && $slideshow != 'slidejs') {
 // just making a default selection
 $ssParams['ss_config'] = 'product';
 
-$modx->regClientCSS(MODX_BASE_URL . 'assets/libs/slideshows/slidejs/slidejs.css', 'screen');
+$modx->regClientCSS(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/slidejs/slidejs.css', 'screen');
 $modx->regClientStartupScript('https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js');
-$modx->regClientStartupScript(MODX_BASE_URL . 'assets/libs/slideshows/slidejs/source/slides.min.jquery.js');
+$modx->regClientStartupScript(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/slidejs/source/slides.min.jquery.js');
 
 $modx->regClientStartupHTMLBlock('
         <script type="text/javascript">
 		$(function(){
 			$(\'#products\').slides({
 				preload: true,
-				preloadImage: \'assets/libs/slideshows/slidejs/examples/Product/img/loading.gif\',
+				preloadImage: \'assets/modules/easy2/libs/slideshows/slidejs/examples/Product/img/loading.gif\',
 				effect: \'slide, fade\',
 				crossfade: true,
 				slideSpeed: 350,

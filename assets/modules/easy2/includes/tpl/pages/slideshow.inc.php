@@ -57,8 +57,7 @@ if (IN_MANAGER_MODE != 'true')
                         <a href="<?php echo $this->e2gModCfg['index'] . '&amp;act=delete_slideshow&amp;ssid=' . $row['id'];?>"
                            onclick="confirm('<?php echo $this->lng['js_delete_slideshow_confirm']; ?>')"
                            title="<?php echo $this->lng['delete']; ?>">
-                            <img src="<?php echo MODX_MANAGER_URL; ?>media/style/<?php echo $this->modx->config['manager_theme'];?>/images/icons/delete.gif"
-                                 width="16" height="16" border="0" alt="" />
+                            <i class="icon-custom bordered-2x icon-bg-red fa fa-trash icon-vs"></i>
                         </a>
                         <a href="<?php echo $this->e2gModCfg['index'] . '&amp;page=edit_slideshow&amp;ssid=' . $row['id']; ?>" title="edit">
                             <b><?php echo $row['name']; ?></b>

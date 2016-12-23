@@ -40,34 +40,34 @@ $output = '';
 //** *********************************************** */
 /*            PREPARE THE HTML HEADERS            */
 //** *********************************************** */
-//    $modx->regClientCSS(MODX_BASE_URL.'assets/libs/slideshows/galleriffic/css/basic.css');
+//    $modx->regClientCSS(MODX_BASE_URL.'assets/modules/easy2/libs/slideshows/galleriffic/css/basic.css');
 if ($ssParams['ss_config'] == 'example-1') {
     if (!empty($ssFiles['ss_css'])) {
         $modx->regClientCSS($ssFiles['ss_css'], 'screen');
     } else {
-        $modx->regClientCSS(MODX_BASE_URL . 'assets/libs/slideshows/galleriffic/css/galleriffic-1.css', 'screen');
+        $modx->regClientCSS(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/galleriffic/css/galleriffic-1.css', 'screen');
     }
 }
 if ($ssParams['ss_config'] == 'example-2') {
     if (!empty($ssFiles['ss_css'])) {
         $modx->regClientCSS($ssFiles['ss_css'], 'screen');
     } else {
-        $modx->regClientCSS(MODX_BASE_URL . 'assets/libs/slideshows/galleriffic/css/galleriffic-2.css', 'screen');
+        $modx->regClientCSS(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/galleriffic/css/galleriffic-2.css', 'screen');
     }
 }
 if ($ssParams['ss_config'] == 'example-3') {
     if (!empty($ssFiles['ss_css'])) {
         $modx->regClientCSS($ssFiles['ss_css'], 'screen');
     } else {
-        $modx->regClientCSS(MODX_BASE_URL . 'assets/libs/slideshows/galleriffic/css/galleriffic-3.css', 'screen');
+        $modx->regClientCSS(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/galleriffic/css/galleriffic-3.css', 'screen');
     }
 }
 if ($ssParams['ss_config'] == 'example-5') {
     if (!empty($ssFiles['ss_css'])) {
         $modx->regClientCSS($ssFiles['ss_css'], 'screen');
     } else {
-        $modx->regClientCSS(MODX_BASE_URL . 'assets/libs/slideshows/galleriffic/css/galleriffic-5.css', 'screen');
-        $modx->regClientCSS(MODX_BASE_URL . 'assets/libs/slideshows/galleriffic/css/white.css', 'screen');
+        $modx->regClientCSS(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/galleriffic/css/galleriffic-5.css', 'screen');
+        $modx->regClientCSS(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/galleriffic/css/white.css', 'screen');
     }
 }
 
@@ -103,27 +103,27 @@ if (empty($ssFiles['ss_css'])) {
 
 // Javascript
 if ($ssParams['ss_config'] == 'example-1') {
-    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/libs/slideshows/galleriffic/js/jquery-1.3.2.js');
-    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/libs/slideshows/galleriffic/js/jquery.galleriffic.js');
+    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/galleriffic/js/jquery-1.3.2.js');
+    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/galleriffic/js/jquery.galleriffic.js');
 }
 if ($ssParams['ss_config'] == 'example-2') {
-    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/libs/slideshows/galleriffic/js/jquery-1.3.2.js');
-    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/libs/slideshows/galleriffic/js/jquery.galleriffic.js');
-    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/libs/slideshows/galleriffic/js/jquery.opacityrollover.js');
+    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/galleriffic/js/jquery-1.3.2.js');
+    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/galleriffic/js/jquery.galleriffic.js');
+    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/galleriffic/js/jquery.opacityrollover.js');
 }
 if ($ssParams['ss_config'] == 'example-3') {
-    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/libs/slideshows/galleriffic/js/jquery-1.3.2.js');
+    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/galleriffic/js/jquery-1.3.2.js');
     // Optionally include jquery.history.js for history support
-    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/libs/slideshows/galleriffic/js/jquery.history.js');
-    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/libs/slideshows/galleriffic/js/jquery.galleriffic.js');
-    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/libs/slideshows/galleriffic/js/jquery.opacityrollover.js');
+    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/galleriffic/js/jquery.history.js');
+    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/galleriffic/js/jquery.galleriffic.js');
+    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/galleriffic/js/jquery.opacityrollover.js');
 }
 if ($ssParams['ss_config'] == 'example-5') {
-    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/libs/slideshows/galleriffic/js/jquery-1.3.2.js');
+    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/galleriffic/js/jquery-1.3.2.js');
     // Optionally include jquery.history.js for history support
-    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/libs/slideshows/galleriffic/js/jquery.history.js');
-    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/libs/slideshows/galleriffic/js/jquery.galleriffic.js');
-    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/libs/slideshows/galleriffic/js/jquery.opacityrollover.js');
+    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/galleriffic/js/jquery.history.js');
+    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/galleriffic/js/jquery.galleriffic.js');
+    $modx->regClientStartupScript(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/galleriffic/js/jquery.opacityrollover.js');
 }
 $modx->regClientStartupHTMLBlock('
         <script type="text/javascript">jQuery.noConflict();</script>');
@@ -136,28 +136,28 @@ if ($ssParams['ss_config'] == 'example-1') {
     if (!empty($ssParams['ss_js'])) {
         $modx->regClientStartupScript($ssParams['ss_js']);
     } else {
-        $modx->regClientStartupScript(MODX_BASE_URL . 'assets/libs/slideshows/galleriffic/js/galleriffic-1.js');
+        $modx->regClientStartupScript(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/galleriffic/js/galleriffic-1.js');
     }
 }
 if ($ssParams['ss_config'] == 'example-2') {
     if (!empty($ssParams['ss_js'])) {
         $modx->regClientStartupScript($ssParams['ss_js']);
     } else {
-        $modx->regClientStartupScript(MODX_BASE_URL . 'assets/libs/slideshows/galleriffic/js/galleriffic-2.js');
+        $modx->regClientStartupScript(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/galleriffic/js/galleriffic-2.js');
     }
 }
 if ($ssParams['ss_config'] == 'example-3') {
     if (!empty($ssParams['ss_js'])) {
         $modx->regClientStartupScript($ssParams['ss_js']);
     } else {
-        $modx->regClientStartupScript(MODX_BASE_URL . 'assets/libs/slideshows/galleriffic/js/galleriffic-3.js');
+        $modx->regClientStartupScript(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/galleriffic/js/galleriffic-3.js');
     }
 }
 if ($ssParams['ss_config'] == 'example-5') {
     if (!empty($ssParams['ss_js'])) {
         $modx->regClientStartupScript($ssParams['ss_js']);
     } else {
-        $modx->regClientStartupScript(MODX_BASE_URL . 'assets/libs/slideshows/galleriffic/js/galleriffic-5.js');
+        $modx->regClientStartupScript(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/galleriffic/js/galleriffic-5.js');
     }
 }
 

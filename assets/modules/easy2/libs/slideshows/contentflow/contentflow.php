@@ -41,7 +41,7 @@ if ($ssParams['ss_config'] == 'default') {
     if (!empty($ssParams['ss_css'])) {
         $modx->regClientCSS($ssParams['ss_css'], 'screen');
     } else {
-        $modx->regClientCSS(MODX_BASE_URL . 'assets/libs/slideshows/contentflow/contentflow.css', 'screen');
+        $modx->regClientCSS(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/contentflow/contentflow.css', 'screen');
     }
 }
 // Javascript
@@ -49,7 +49,7 @@ if ($ssParams['ss_config'] == 'default') {
     if (!empty($ssParams['ss_js'])) {
         $modx->regClientStartupScript($ssParams['ss_js']);
     } else {
-        $modx->regClientStartupScript(MODX_BASE_URL . 'assets/libs/slideshows/contentflow/contentflow.js');
+        $modx->regClientStartupScript(MODX_BASE_URL . 'assets/modules/easy2/libs/slideshows/contentflow/contentflow.js');
     }
 }
 
