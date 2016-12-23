@@ -1,4 +1,4 @@
-# Easy 2 Gallery 1.5.3
+# Easy 2 Gallery 1.5.5
 
 A Multilanguage image gallery snippet and module (for MODx Evolution 1.1 and above) that offers features like image browsing, automatic thumbnail creation, size adjusting, watermarking, adding comments, etc..
 
@@ -46,70 +46,75 @@ Comments functionality has been removed from the class file and now has its own 
 A new view processor snippet shows the comments on the landing page, and in the popup window.
 See comments.readme.txt for full usage information.
 
-***Installation:***
-
-1. Create a new snippet, for this example named " easy2gallery_landingpage_comments "
+Installation:
+1. create a new snippet, for this example named " easy2gallery_landingpage_comments "
    category: same as easy2gallery
    snippet code:
-   ```
-   define( 'E2G_MODE', 'true' );
-   $e2g_path =MODX_BASE_PATH.'assets/modules/easy2/';
-   include $e2g_path.'comments_processor.easy2gallery.php';
-   ```
+   
+README.md
+define( 'E2G_MODE', 'true' );
+$e2g_path =MODX_BASE_PATH.'assets/modules/easy2/';
+include $e2g_path.'comments_processor.easy2gallery.php';
+README.md
 
 2. Create a new snippet, for this example named " easy2gallery_view_processor "
-   Category: same as easy2gallery
-   Snippet code:
-   ```
-   define( 'E2G_MODE', 'true' );
-   $e2g_path =MODX_BASE_PATH.'assets/modules/easy2/';
-   include $e2g_path.'view_processor.easy2gallery.php';
-
-   return $output;
-   ```
-
-3. You need a landing page, if you don't have one set up yet see the help section in the module for that info.
+   category: same as easy2gallery
+   snippet code:
    
-   Content of the landing page:
-    ```  
-   [!easy2? &landingpage=`47` &lp_img_src=`generated` &lp_w=`450` &lp_h=`450`!]
-   ```
-   ```
-   [!easy2gallery_landingpage_comments?
-   &ecl_page=`2`
-   &captcha=`1`
-   &comments_lang=``
-   &approved=`1`
-   &delay=`30`
-   !]
-   ```
+README.md
+define( 'E2G_MODE', 'true' );
+$e2g_path =MODX_BASE_PATH.'assets/modules/easy2/';
+include $e2g_path.'view_processor.easy2gallery.php';
+
+return $output;
+README.md
+
+3. You need a landing page, if you don't have one set up yet see
+the help section in the module for that info.
+   
+   content of the landing page:
+ ```  
+[!easy2? &landingpage=`47` &lp_img_src=`generated` &lp_w=`450` &lp_h=`450`!]
+```
+```
+[!easy2gallery_landingpage_comments?
+&ecl_page=`2`
+&captcha=`1`
+&comments_lang=``
+&approved=`1`
+&delay=`30`
+!]
+```
 
 4. Create a new document for the view processor.
-   Doc settings:
-     - blank template
-     - all other settings off
-     - published
+   doc settings:
+   blank template
+   all other settings off
+   published
    
-   Doc content:
-   ```
-   [!easy2gallery_view_processor?
-   &captcha=`1`
-   &captcha_tpl=`captcha_tpl`
-   &comments_lang=``
-   &approved=`1`
-   &delay=`90`
-   !]
-   ```
+   doc content:
+   
+```
+[!easy2gallery_view_processor?
+&captcha=`1`
+&captcha_tpl=`captcha_tpl`
+&comments_lang=``
+&approved=`1`
+&delay=`90`
+!]
+```
+
 
 5. Open assets/modules/easy2/plugin.easy2gallery.php file in a text editor or
-   File manager editor at the top find this line:
-   ```
-      $e2g_vpl_id = 48;
-   ```
-   Change the 48 to the id of your view processor document.
-   
-   Make sure to check the following events on the System Events tab:
-      OnWebPageInit
-      OnWebPageComplete
+file manager editor at the top find this line:
 
-   See comments.readme.txt for full usage information.
+   $e2g_vpl_id = 48;
+   
+Change the 48 to the id of your view processor document.
+   
+Make sure to check the following events on the System Events tab:
+   OnWebPageInit
+   OnWebPageComplete
+   
+
+See comments.readme.txt for full usage information.
