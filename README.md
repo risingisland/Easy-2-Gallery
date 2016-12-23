@@ -5,7 +5,8 @@ A Multilanguage image gallery snippet and module (for MODx Evolution 1.1 and abo
 
 **Installation**
 
-1. Unpack archive in root folder of you modx installation
+1. Install with  Package Manager Module or Store modules.
+   Or, for manual installation, unpack archive in root folder of you modx installation
 2. If this is your fresh installation: create a new folder 'gallery', the default path is assets/images/gallery.
    You can change this from the default.config.easy2gallery.php (fresh installation) from this value:
    
@@ -37,7 +38,9 @@ And click save.
    folder.
 2. Open the module tab, upgrade following instructions
 3. If upgrade is successful, remove install folder, manually or by clicking delete button. module won't work if this folder exists.
-4. CLEAR MODX CACHE
+4. Note: As of v1.5.5, the directory "assets/libs" has been changed to "assets/modules/easy2/libs".
+   You will need to update the paths for any Viewer, Slideshows and Plugins that are in use via their respective menu.  
+5. CLEAR MODX CACHE
 
 
 **NEW COMMENTS PROCESSING**
