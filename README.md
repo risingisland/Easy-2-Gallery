@@ -47,7 +47,7 @@ A new view processor snippet shows the comments on the landing page, and in the 
 See comments.readme.txt for full usage information.
 
 Installation:
-1. create a new snippet, for this example named " easy2gallery_landingpage_comments "
+1. create a new snippet, for this example named " easy2_Landingpage_Comments "
    category: same as easy2gallery
    snippet code:
    
@@ -57,7 +57,7 @@ $e2g_path =MODX_BASE_PATH.'assets/modules/easy2/';
 include $e2g_path.'comments_processor.easy2gallery.php';
 README.md
 
-2. Create a new snippet, for this example named " easy2gallery_view_processor "
+2. Create a new snippet, for this example named " easy2_View_Processor "
    category: same as easy2gallery
    snippet code:
    
@@ -77,7 +77,7 @@ the help section in the module for that info.
 [!easy2? &landingpage=`47` &lp_img_src=`generated` &lp_w=`450` &lp_h=`450`!]
 ```
 ```
-[!easy2gallery_landingpage_comments?
+[!easy2_Landingpage_Comments?
 &ecl_page=`2`
 &captcha=`1`
 &comments_lang=``
@@ -95,7 +95,7 @@ the help section in the module for that info.
    doc content:
    
 ```
-[!easy2gallery_view_processor?
+[!easy2_View_Processor?
 &captcha=`1`
 &captcha_tpl=`captcha_tpl`
 &comments_lang=``
