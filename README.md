@@ -48,7 +48,7 @@ See comments.readme.txt for full usage information.
 
 ***Installation:***
 
-1. create a new snippet, for this example named " easy2gallery_landingpage_comments "
+1. Create a new snippet, for this example named " easy2gallery_landingpage_comments "
    category: same as easy2gallery
    snippet code:
    ```
