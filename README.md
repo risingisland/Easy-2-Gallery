@@ -38,7 +38,7 @@ And click save.
    folder.
 2. Open the module tab, upgrade following instructions
 3. If upgrade is successful, remove install folder, manually or by clicking delete button. module won't work if this folder exists.
-4. Note: As of v1.5.5, the directory "assets/libs" has been changed to "assets/modules/easy2/libs".
+4. **_Note:_** As of v1.5.5, the directory "assets/libs" has been changed to "assets/modules/easy2/libs".
    You will need to update the paths for any Viewer, Slideshows and Plugins that are in use via their respective menu.  
 5. CLEAR MODX CACHE
 
