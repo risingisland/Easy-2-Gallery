@@ -29,7 +29,7 @@ if (isset($_GET['p']) && $_GET['p'] == 'del_inst_dir') {
     $install->initInstall($_POST, $index);
 } else {
     // SNIPPET
-    if (empty($e2g['snippet_id']) || $e2g['snippet_id'] == '') {
+/*    if (empty($e2g['snippet_id']) || $e2g['snippet_id'] == '') {
 
         $snippetId = $modx->db->getValue( $modx->db->select( 'id', $modx->db->config['table_prefix'] . 'site_snippets', 'name ="easy2"' )  );
 
@@ -37,9 +37,9 @@ if (isset($_GET['p']) && $_GET['p'] == 'del_inst_dir') {
     
         $snippetId = $e2g['snippet_id'];
     }
-
+*/
     // PLUGIN
-    if (empty($e2g['plugin_id']) || $e2g['plugin_id'] == '') {
+/*    if (empty($e2g['plugin_id']) || $e2g['plugin_id'] == '') {
 
         $pluginId = $modx->db->getValue( $modx->db->select( 'id', $modx->db->config['table_prefix'] . 'site_plugins', 'name ="easy2"' )  );
 
@@ -47,7 +47,7 @@ if (isset($_GET['p']) && $_GET['p'] == 'del_inst_dir') {
     
         $pluginId = $e2g['plugin_id'];
     }
-    ?>
+*/    ?>
     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
     <html>

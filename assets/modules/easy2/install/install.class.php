@@ -1142,7 +1142,7 @@ if (!empty($moduleFile) && file_exists($moduleFile)) {
 
         // SNIPPET
 
-        if (empty($post['snippet_id'])) {
+/*        if (empty($post['snippet_id'])) {
 
             $snippetFile = realpath(MODX_BASE_PATH . 'assets/modules/easy2/snippet.easy2gallery.php');
             if (!empty($snippetFile) && file_exists($snippetFile)) {
@@ -1190,9 +1190,9 @@ if (!empty($snippetFile) && file_exists($snippetFile)) {
         }
         else
             $post['snippet_id'] = !empty($post['snippet_id']) ? $post['snippet_id'] : $this->e2g['snippet_id'];
-
+*/
         // PLUGIN
-        $pluginFile = realpath(MODX_BASE_PATH . 'assets/modules/easy2/plugin.easy2gallery.php');
+/*        $pluginFile = realpath(MODX_BASE_PATH . 'assets/modules/easy2/plugin.easy2gallery.php');
         if (!empty($pluginFile) && file_exists($pluginFile)) {
             $pluginCode = '
 $pluginFile = realpath(MODX_BASE_PATH . \'assets/modules/easy2/plugin.easy2gallery.php\');
@@ -1229,9 +1229,9 @@ if (!empty($pluginFile) && file_exists($pluginFile)) {
         } else {
             $post['plugin_id'] = !empty($post['plugin_id']) ? $post['plugin_id'] : $this->e2g['plugin_id'];
         }
-
+*/
         // PLUGIN EVENTS
-        if (!empty($post['plugin_id'])) {
+/*        if (!empty($post['plugin_id'])) {
             $nEvtIds = array('90', '94'); // Plugin event's IDs. Will be added more later.
             $delete = $this->modx->db->query( 'DELETE FROM ' . $this->modx->db->config['table_prefix'] . 'site_plugin_events WHERE pluginid=\'' . $post['plugin_id'] . '\'');
 
@@ -1260,7 +1260,7 @@ if (!empty($pluginFile) && file_exists($pluginFile)) {
                 }
             }
         }
-
+*/
         /**
          * goldsky -- add the file's/folder's names restoration from the previous installation version.
          */
@@ -1276,9 +1276,9 @@ if (!empty($pluginFile) && file_exists($pluginFile)) {
                 . '<br /><br /><input type="button" value="' . $this->lngi['del_inst_dir'] . '" onclick="document.location.href=\'' . $index . '&p=del_inst_dir\'">';
 
         $this->_saveInstallConfig('dir', $post['path']);
-        $this->_saveInstallConfig('plugin_id', $post['plugin_id']);
+/*        $this->_saveInstallConfig('plugin_id', $post['plugin_id']);
         $this->_saveInstallConfig('snippet_id', $post['snippet_id']);
-        $this->_saveInstallConfig('mod_id', $post['mod_id']);
+*/        $this->_saveInstallConfig('mod_id', $post['mod_id']);
 
         $_SESSION['installE2g'] = FALSE;
         unset($_SESSION['installE2g']);

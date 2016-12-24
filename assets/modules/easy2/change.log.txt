@@ -4,6 +4,15 @@
 (____)\_/\_/(____/(__/    (____)   \___/\_/\_/\____/\____/(____)(__\_)(__/
 
 
+***************** 1.5.5-rc1 *****************
++ moved directory "assets/libs" to "assets/modules/easy2/libs"
++ created install package
++ added new Snippets for install package
+
+***************** 1.5.3-rc3 *****************
++ modernized icons with FontAwesome
++ fixed some css
+
 ***************** 1.5.0-rc3 *****************
 + removed tinymce from main.inc.php, setting.inc.php ( cannot get it to work )
 + fixed missing menu icons
