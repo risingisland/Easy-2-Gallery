@@ -458,7 +458,7 @@ foreach ($this->e2gModCfg['e2gPages'] as $v) {
         $count_suc = count($_SESSION['easy2suc']);
         $count_err = count($_SESSION['easy2err']);
         if ($count_err > 0) {
-            $err = '<div class="alert alert-danger" style="margin: 30px;padding: 10px;"><i class="fa-exclamation-triangle fa-2x"></i> ' . implode('<br />', $_SESSION['easy2err']) . '</div>';
+            $err = '<div class="alert alert-danger" style="margin: 30px;padding: 10px;"><i class="fa fa-exclamation-triangle fa-2x"></i> ' . implode('<br />', $_SESSION['easy2err']) . '</div>';
             $_SESSION['easy2err'] = array();
         }
         if ($count_suc > 0) {
