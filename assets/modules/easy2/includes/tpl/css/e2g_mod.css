@@ -598,3 +598,12 @@ ul.modButtons li {
 form {
     background-color: #FFF;
 }
+
+/* update for v1.2.2 */
+.modButtons .system-buttons {width:30%;}
+.tab-pane ul li ul li {
+    margin-left: 0px;
+	padding: 0px;
+	border-bottom: none;
+    border-left: none;
+}
