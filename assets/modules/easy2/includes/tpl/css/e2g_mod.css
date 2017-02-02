@@ -600,10 +600,15 @@ form {
 }
 
 /* update for v1.2.2 */
-.modButtons .system-buttons {width:30%;}
+.system-buttons {width:25%;}
 .tab-pane ul li ul li {
-    margin-left: 0px;
-	padding: 0px;
-	border-bottom: none;
+    padding: 0 !important;
+    margin: 0;
+    border-bottom: none;
     border-left: none;
 }
+.tab-pane ul li ul li:hover{
+background: none;
+border-left: none;
+}
+.dynamic-tab-pane-control li {padding-right: 0;}
