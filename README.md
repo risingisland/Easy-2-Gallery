@@ -1,4 +1,4 @@
-# Easy 2 Gallery 1.5.5
+# Easy 2 Gallery 1.6-rc1
 
 A Multilanguage image gallery snippet and module (for MODx Evolution 1.1 and above) that offers features like image browsing, automatic thumbnail creation, size adjusting, watermarking, adding comments, etc..
 
