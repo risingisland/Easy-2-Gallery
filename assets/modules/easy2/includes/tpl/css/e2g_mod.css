@@ -22,7 +22,7 @@ h3 {
 .pageTitle {
     position: relative;
     min-height: 40px;
-    margin-top: -10px;
+    margin-top: -35px;
 	background-color: #FFF;
 }
 
@@ -30,12 +30,12 @@ h3 {
     position: absolute;
     top: 0;
     right: 0;
-    font-size: 50px;
+    font-size: 20px;
     font-weight: 900;
     letter-spacing: 10px;
     line-height: 100%;
-    color: #ccc;
-    padding-right: 100px;
+    color: #606060;
+    padding-right: 150px;
 }
 
 .e2g_grayed a, .e2g_grayed a:link {
@@ -197,7 +197,8 @@ li.no-bullet {
     font-weight: bold;
     padding: 5px;
     margin: -4px -4px 4px -4px;
-    text-shadow: 1px 1px 5px #666666;
+	color:#666666;
+    /*text-shadow: 1px 1px 5px #666666;*/
 }
 
 .h3title {
@@ -214,6 +215,7 @@ li.no-bullet {
     margin-left: 0;
     font-weight: bold;
     text-align: center;
+	color:#666666;
     -o-box-shadow: 2px 2px 5px #888;
     -icab-box-shadow: 2px 2px 5px #888;
     -khtml-box-shadow: 2px 2px 5px #888;
@@ -594,6 +596,7 @@ ul.modButtons li {
 
 .dynamic-tab-pane-control, .tab-pane {
     background-color: #FFF;
+	padding-left:5px;
 }
 form {
     background-color: #FFF;

@@ -97,14 +97,14 @@ if (isset($_GET['p']) && $_GET['p'] == 'del_inst_dir') {
                                 </table>
                                 <div><?php echo htmlspecialchars_decode($lngi['comment1'], ENT_QUOTES); ?></div>
                                 <div style="border: 1px solid #ccc; padding: 10px; background-color: #EFEFEF;">
-                                    <img src="<?php echo MODX_BASE_URL; ?>manager/media/style/MODxCarbon/images/icons/error.png" alt="" style="float: left; margin-right: 10px;" />
+                                    <img src="<?php echo MODX_MANAGER_URL; ?>media/style/<?php echo $this->modx->config['manager_theme'];?>/images/icons/error.png" alt="" style="float: left; margin-right: 10px;" />
                                     <?php echo htmlspecialchars_decode($lngi['comment'], ENT_QUOTES); ?>
                                 </div>
                                 <div style="color: green; font-weight: bold; font-size: 1.5em;"><?php echo htmlspecialchars_decode($lngi['system_check']); ?> :</div>
 
                                 <?php
-                                $iconOk = '<img src="' . MODX_BASE_URL . 'assets/modules/easy2/includes/tpl/icons/action_check.png" alt="" /> ';
-                                $iconBad = '<img src="' . MODX_BASE_URL . 'assets/modules/easy2/includes/tpl/icons/action_delete.png" alt="" /> ';
+                                $iconOk = '<i class="fa fa-check btn-success"></i> ';
+                                $iconBad = '<i class="fa fa-remove btn-danger"></i> ';
                                 $disabled = '';
                                 echo '<ul>';
 
@@ -200,9 +200,9 @@ if (isset($_GET['p']) && $_GET['p'] == 'del_inst_dir') {
                                 if ($disabled == 'disabled="disabled"')
                                     $style = 'style="color:gray;"';
 
-                                echo '</ul>';
+                                echo '</ul><br>';
                                 ?>
-                                <input type="submit" <?php echo $style; ?> value="<?php echo htmlspecialchars_decode($lngi['ok']); ?>" <?php echo $disabled; ?> />
+                                <input type="submit" class="btn btn-success" <?php echo $style; ?> value="<?php echo htmlspecialchars_decode($lngi['ok']); ?>" <?php echo $disabled; ?> />
                             </form>
                             <?php
                         }

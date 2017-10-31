@@ -64,9 +64,9 @@ if (IN_MANAGER_MODE != 'true')
                             </td>
                         </tr>
                     </table>
-                    <div style="margin-left: 80px;">
-                        <input type="submit" value="<?php echo $this->lng['upload']; ?>" />
-                        <input type="button" value="<?php echo $this->lng['btn_field_add']; ?>" onclick="addField();" />
+                    <div style="margin: 20px 110px;">
+                        <input class="btn btn-success" type="submit" class="success" value="<?php echo $this->lng['upload']; ?>" />
+                        <input class="btn btn-secondary" type="button" value="<?php echo $this->lng['btn_field_add']; ?> +" onclick="addField();" />
                     </div>
                 </div>
                 <div class="clear">&nbsp;</div>

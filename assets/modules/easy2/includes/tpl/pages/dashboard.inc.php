@@ -143,12 +143,12 @@ echo $this->plugin('OnE2GDashboardPrerender');
                         <tr>
                             <td><?php echo $this->lng['server']; ?></td>
                             <td>:</td>
-                            <td style="font-weight: bold;"><?php echo getenv('SERVER_SOFTWARE'); ?></td>
+                            <td style="font-weight: bold; color:#808080;"><?php echo getenv('SERVER_SOFTWARE'); ?></td>
                         </tr>
                         <tr>
                             <td><?php echo $this->lng['magic_quote']; ?></td>
                             <td>:</td>
-                            <td style="font-weight: bold;">
+                            <td style="font-weight: bold; color:#808080;">
                                 <?php
                                 // PHP magic_quotes_gpc()
                                 if (get_magic_quotes_gpc()) {
@@ -162,7 +162,7 @@ echo $this->plugin('OnE2GDashboardPrerender');
                         <tr>
                             <td><?php echo $this->lng['multibyte_string']; ?></td>
                             <td>:</td>
-                            <td style="font-weight: bold;">
+                            <td style="font-weight: bold; color:#808080;">
                                 <?php
                                 if (function_exists('mb_get_info') && is_array(mb_get_info())) {
                                     echo $this->lng['enabled'] . ' ' . $icon_ok;
@@ -175,7 +175,7 @@ echo $this->plugin('OnE2GDashboardPrerender');
                         <tr>
                             <td>set_time_limit</td>
                             <td>:</td>
-                            <td style="font-weight: bold;">
+                            <td style="font-weight: bold; color:#808080;">
                                 <?php
                                 if (function_exists('set_time_limit')) {
                                     echo $this->lng['enabled'] . ' ' . $icon_ok;
@@ -188,7 +188,7 @@ echo $this->plugin('OnE2GDashboardPrerender');
                         <tr>
                             <td>ZipArchive</td>
                             <td>:</td>
-                            <td style="font-weight: bold;">
+                            <td style="font-weight: bold; color:#808080;">
                                 <?php
                                 if (class_exists('ZipArchive')) {
                                     echo $this->lng['enabled'] . ' ' . $icon_ok;
@@ -201,22 +201,22 @@ echo $this->plugin('OnE2GDashboardPrerender');
                         <tr>
                             <td><?php echo $this->lng['upload_max']; ?></td>
                             <td>:</td>
-                            <td style="font-weight: bold;"><?php echo ini_get('upload_max_filesize'); ?></td>
+                            <td style="font-weight: bold; color:#808080;"><?php echo ini_get('upload_max_filesize'); ?></td>
                         </tr>
                         <tr>
                             <td>MySQL</td>
                             <td>:</td>
-                            <td style="font-weight: bold;"><?php echo $this->modx->db->getVersion(); ?></td>
+                            <td style="font-weight: bold; color:#808080;"><?php echo $this->modx->db->getVersion(); ?></td>
                         </tr>
                         <tr>
                             <td><?php echo $this->lng['database']; ?></td>
                             <td>:</td>
-                            <td style="font-weight: bold;"><?php echo str_replace('`', '', $this->modx->db->config['dbase']); ?></td>
+                            <td style="font-weight: bold; color:#808080;"><?php echo str_replace('`', '', $this->modx->db->config['dbase']); ?></td>
                         </tr>
                         <tr>
                             <td><?php echo $this->lng['gallery_folder']; ?></td>
                             <td>:</td>
-                            <td style="font-weight: bold;"><?php echo $this->e2gModCfg['gdir']; ?></td>
+                            <td style="font-weight: bold; color:#808080;"><?php echo $this->e2gModCfg['gdir']; ?></td>
                         </tr>
                     </table>
                 </div>
@@ -227,7 +227,7 @@ echo $this->plugin('OnE2GDashboardPrerender');
                             <td width="50%">
                                 <div class="dashboardButton">
                                     <a href="<?php echo $this->e2gModCfg['index']; ?>&amp;act=clean_cache">
-                                        <span><?php echo $this->lng['clean_cache']; ?></span>
+                                        <span><?php echo $this->lng['clean_cache']; ?> <i class="fa fa-trash"></i></span>
                                     </a>
                                 </div>
                             </td>

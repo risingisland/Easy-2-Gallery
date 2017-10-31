@@ -1272,8 +1272,8 @@ if (!empty($pluginFile) && file_exists($pluginFile)) {
             $this->chref($index);
         }
 
-        $_SESSION['easy2suc']['success'] = '<br /><br /><br />' . $this->lngi['success']
-                . '<br /><br /><input type="button" value="' . $this->lngi['del_inst_dir'] . '" onclick="document.location.href=\'' . $index . '&p=del_inst_dir\'">';
+        $_SESSION['easy2suc']['success'] = '<br /><br /><br /><i class="fa fa-check btn-success"></i> ' . $this->lngi['success']
+                . '<br /><br /><input class="btn btn-success" type="button" value="' . $this->lngi['del_inst_dir'] . '" onclick="document.location.href=\'' . $index . '&p=del_inst_dir\'">';
 
         $this->_saveInstallConfig('dir', $post['path']);
 /*        $this->_saveInstallConfig('plugin_id', $post['plugin_id']);

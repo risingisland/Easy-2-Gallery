@@ -480,10 +480,10 @@ foreach ($this->e2gModCfg['e2gPages'] as $v) {
         ?>
         <div id="report"><?php echo $err . $suc; ?></div>
         <div class="sectionHeader">
-            <span>Easy 2 Gallery <?php echo E2G_VERSION; ?></span>
+            <span style="color:#0e80cb;font-size: 1.5em;line-height: 1.5rem;margin: 0;padding: 0.8rem;"><i class="fa fa-photo"></i> Easy 2 Gallery <?php echo E2G_VERSION; ?></span>
         </div>
         <div class="e2g-navigation">
-            <span class="e2g-navigationTitle">Menu</span>
+            <span class="e2g-navigationTitle btn btn-secondary">Menu</span>
             <span class="e2g-navigationTree">
                 <?php
                 foreach ($this->e2gModCfg['e2gPages'] as $k => $v) {
