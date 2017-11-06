@@ -54,8 +54,8 @@ if (!isset($this->sanitizedGets['path'])) {
             </a>
         </li>
         <li id="moveActions" style="display: none;">
-            <span><?php echo $this->lng['movetofolder']; ?> :</span>
-            <select name="newparent">
+            <span style="padding-left:120px"><?php echo $this->lng['movetofolder']; ?> :</span>
+            <select name="newparent" style="width: 400px;">
                 <option value="">&nbsp;</option>
                 <?php echo $this->_getDirDropDownOptions(); ?>
             </select>

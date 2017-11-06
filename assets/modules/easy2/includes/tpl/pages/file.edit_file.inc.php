@@ -60,7 +60,7 @@ $filename = substr($row['filename'], 0, -(strlen($ext)));
                                     <tr>
                                         <td colspan="3">
                                             <span><b><?php echo $this->lng['file_rename']; ?> : </b></span>
-                                            <span><input name="newfilename" type="text" value="<?php echo $filename; ?>" size="20" style="text-align:right;" /> <?php echo $ext; ?></span>
+                                            <span><input name="newfilename" type="text" value="<?php echo $filename; ?>" size="20" style="text-align:right; max-width:75%" /> <?php echo $ext; ?></span>
                                             <input type="hidden" name="filename" value="<?php echo $filename; ?>" />
                                             <input type="hidden" name="ext" value="<?php echo $ext; ?>" />
                                         </td>
