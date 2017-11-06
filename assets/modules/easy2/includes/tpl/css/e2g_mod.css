@@ -1,3 +1,11 @@
+body, ul, li {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #fafafa;
+    color: #444;
+}
 .e2g {
     padding: 20px;
 	border: none;
@@ -5,6 +13,13 @@
 }
 .e2g  .radio input[type="radio"], .e2g .radio-inline input[type="radio"], .e2g .checkbox input[type="checkbox"], .e2g .checkbox-inline input[type="checkbox"] {
     margin-left: 0px;
+}
+h1 {
+    color: #0e80cb;
+    font-size: 1.5em !important;
+    line-height: 1.5rem;
+    margin: 0;
+    padding: 0.8rem;
 }
 h2 {
     margin-top: 0.5em;
@@ -19,23 +34,24 @@ h3 {
     color: maroon;
 }
 
-.pageTitle {
+/*.pageTitle {
     position: relative;
     min-height: 40px;
     margin-top: -35px;
 	background-color: #FFF;
-}
+}*/
 
 .pageTitle span {
+    color: #657587;
+    font-size: 1.5em;
+    font-weight: 600;
+	padding-left:30px;
+	margin-top:20px;
+}
+
+.e2g_grayed{
     position: absolute;
-    top: 0;
-    right: 0;
-    font-size: 20px;
-    font-weight: 900;
-    letter-spacing: 10px;
-    line-height: 100%;
-    color: #606060;
-    padding-right: 150px;
+	margin-top:20px;
 }
 
 .e2g_grayed a, .e2g_grayed a:link {
@@ -197,7 +213,7 @@ li.no-bullet {
     font-weight: bold;
     padding: 5px;
     margin: -4px -4px 4px -4px;
-	color:#666666;
+    color:#666666;
     /*text-shadow: 1px 1px 5px #666666;*/
 }
 
@@ -205,6 +221,18 @@ li.no-bullet {
     font-size: 1.2em;
     font-weight: bold;
     color: maroon;
+}
+
+.clearcacheButton {
+    display: block;
+    background-color: #F0F0F0;
+	border:1px solid #ccc;
+    padding: 7px;
+    margin: 5px;
+    margin-left: 0;
+    text-align: center;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
 }
 
 .dashboardButton span {
@@ -320,20 +348,21 @@ li.no-bullet {
     position: relative;
     float: right;
     /*top: -15px;*/
-    margin-right: 15px;
+    margin-right: 2.5em;
     z-index: 1000;
     letter-spacing: 2px;
 }
 
 .e2g-navigation .e2g-navigationTitle {
     border: 1px solid #DDDDDD;
-    background-color: #EEEEEE;
+    background-color: #0e80cb;
     margin-left: 3px;
     margin-right: 3px;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: 30px;
+    padding-right: 30px;
     font-size: 14px;
     font-weight: bold;
+	color:#fff;
 }
 
 .e2g-navigation {
@@ -449,6 +478,7 @@ li.no-bullet {
     z-index: 1;
     float: left;
     visibility: hidden;
+	padding-left: 5px;
 }
 
 .dir .boxcontent .icons .checkbox,
@@ -602,8 +632,21 @@ form {
     background-color: #FFF;
 }
 
-/* update for v1.2.2 */
+/* update for v1.2+ */
 .system-buttons {width:25%;}
+.tab-page {
+    background-color: #fff;
+    border: 0 none;
+    border-radius: 0;
+    box-shadow: 0 0 0.3rem 0 rgba(0, 0, 0, 0.1);
+    clear: both;
+    padding: 20px;
+}
+.tab-pane {
+    width: 100%;
+	margin: 0 !important;
+	padding: 0 !important;
+}
 .tab-pane ul li ul li {
     padding: 0 !important;
     margin: 0;
@@ -614,4 +657,12 @@ form {
 background: none;
 border-left: none;
 }
-.dynamic-tab-pane-control li {padding-right: 0;}
+.tab-row-container{display:none;}
+.dynamic-tab-pane-control li {padding: 20px 0;}
+#report .alert{
+	margin: 30px; 
+	padding: 10px;
+}
+.dash-title{font-weight: bold; color:#808080;}
+.dash-title-col{font-weight: bold; color:#808080;padding-right:5px;}
+#showActions, #hideActions, #deleteActions, #downloadActions, #tagActions{padding-left:150px;}

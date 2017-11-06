@@ -1,10 +1,10 @@
 /**
- * Easy 2 Gallery (v1.5.5)
+ * Easy 2 Gallery
  *
  * Image gallery module
  *
  * @category	module
- * @version     1.5.5 rc1
+ * @version     1.6-rc1
  * @author      Author: @goldsky @Breezer @risingisland
  * @internal	@modx_category Gallery
  * @license 	http://www.gnu.org/copyleft/gpl.html GNU Public License (GPL)

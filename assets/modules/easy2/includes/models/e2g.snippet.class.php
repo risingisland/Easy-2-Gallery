@@ -336,15 +336,15 @@ class E2gSnippet extends E2gPub {
             $resultCountFiles = 0;
         } elseif (!empty($this->e2gSnipCfg['gid'])) {
             $selectCountFiles = $this->_fileSqlStatement('COUNT(id)');
-            $querySelectCountFiles = mysqli_query($this->modx->db->conn,$selectCountFiles);
-            if (!$querySelectCountFiles) {
+
+            $resultCountFiles = $this->modx->db->getValue( $this->modx->db->query($selectCountFiles) );
+
+            if (!$resultCountFiles) {
                 echo __LINE__ . ' : #' . mysqli_errno($this->modx->db->conn) . ' ' . mysqli_error($this->modx->db->conn) . '<br />' . $selectCountFiles . '<br />';
                 return FALSE;
             }
-            $resultCountFiles = mysqli_data_seek($querySelectCountFiles, 0);
-            mysqli_free_result($querySelectCountFiles);
         }
-
+        
         $this->_totalCount = $this->_countAllDirs + $resultCountFiles;
 
         // Terminate all the outputs, when the result is empty.

@@ -36,7 +36,7 @@ include_once E2G_MODULE_PATH . 'includes/tpl/pages/file.menu.top.inc.php';
             break;
         case 'thumbnails':
             if (!isset($this->sanitizedGets['path'])): ?>
-                <input type="checkbox" onclick="selectAll(this.checked); void(0);" style="border:0;" /><?php
+                <input type="checkbox" onclick="selectAll(this.checked); void(0);" style="border:2px solid #0099FF;" /><?php
                 echo $this->lng['select_all'];
             endif;
     ?>

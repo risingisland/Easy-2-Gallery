@@ -138,7 +138,7 @@ mysqli_free_result($resultdesc);
         case 'thumbnails':
             if (!isset($this->sanitizedGets['path'])) {
                 ?>
-                <input type="checkbox" onclick="selectAll(this.checked); void(0);" style="border:0;" />
+                <input type="checkbox" onclick="selectAll(this.checked); void(0);" style="border:2px solid #0099FF;" />
                 <?php
                 echo $this->lng['select_all'];
             }

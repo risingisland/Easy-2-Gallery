@@ -7,7 +7,7 @@
             </div>
             [+easy2:thumb.thumb+]
             <div class="attributes">
-				<span style="padding-right:50px;">[+easy2:thumb.icon+][+easy2:thumb.attributeIcons+]</span>
+				<span style="padding:0 45px 0 5px;">[+easy2:thumb.icon+][+easy2:thumb.attributeIcons+]</span>
 				<span class="checkbox" style="padding:0; width: [+easy2:thumb.mod_w+]px; ">
                     [+easy2:thumb.checkBox+]
                 </span></div>

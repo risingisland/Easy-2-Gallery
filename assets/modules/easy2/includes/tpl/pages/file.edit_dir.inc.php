@@ -76,7 +76,7 @@ echo isset($this->sanitizedGets['tag']) ? '&amp;tag=' . $this->sanitizedGets['ta
                 <tr>
                     <td valign="top"><b><?php echo $this->lng['description']; ?></b></td>
                     <td valign="top"><b>:</b></td>
-                    <td><textarea name="description" style="width:500px" cols="" rows="4"><?php echo $row['cat_description']; ?></textarea></td>
+                    <td><textarea name="description" style="width:500px" class="e2gRichText" cols="" rows="4"><?php echo $row['cat_description']; ?></textarea></td>
                 </tr>
                 <tr>
                     <td valign="top"><b><?php echo $this->lng['user_permissions']; ?></b></td>
@@ -119,9 +119,9 @@ echo isset($this->sanitizedGets['tag']) ? '&amp;tag=' . $this->sanitizedGets['ta
             </table>
         </div>
     </div><?php echo $this->plugin('OnE2GFolderEditFormRender'); ?>
-    <div style="margin-left: 80px;">
-        <input type="submit" value="<?php echo $this->lng['save']; ?>" />
-        <input type="button" value="<?php echo $this->lng['cancel']; ?>" onclick="document.location.href='<?php
+    <div style="margin: 20px 0 20px 250px;">
+        <input type="submit" class="btn btn-success" value="<?php echo $this->lng['save']; ?>" />
+        <input type="button" class="btn btn-warning" value="<?php echo $this->lng['cancel']; ?>" onclick="document.location.href='<?php
                             echo $this->e2gModCfg['index'];
                             if ($this->sanitizedGets['tag'])
                                 echo '&amp;tag=' . $this->sanitizedGets['tag'];

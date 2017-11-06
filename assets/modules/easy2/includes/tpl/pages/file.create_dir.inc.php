@@ -44,13 +44,13 @@ if (IN_MANAGER_MODE != 'true')
                 </tr>
                 <tr>
                     <td valign="top"><b><?php echo $this->lng['description']; ?> :</b></td>
-                    <td><textarea name="description" style="width:500px" cols="" rows="5"></textarea></td>
+                    <td><textarea name="description" class="e2gRichText" style="width:500px" cols="" rows="5"></textarea></td>
                 </tr>
             </table>
         </div>
     </div><?php echo $this->plugin('OnE2GFolderCreateFormRender'); ?>
-    <div style="margin-left: 90px;">
-        <input type="submit" value="<?php echo $this->lng['save']; ?>" />
-        <input type="button" value="<?php echo $this->lng['cancel']; ?>" onclick="document.location.href='<?php echo $this->e2gModCfg['index']; ?>&amp;pid=<?php echo $this->e2gModCfg['parent_id']; ?>'" />
+    <div style="margin: 20px 0 20px 190px;">
+        <input type="submit" class="btn btn-success" value="<?php echo $this->lng['save']; ?>" />
+        <input type="button" class="btn btn-warning" value="<?php echo $this->lng['cancel']; ?>" onclick="document.location.href='<?php echo $this->e2gModCfg['index']; ?>&amp;pid=<?php echo $this->e2gModCfg['parent_id']; ?>'" />
     </div>
 </form>

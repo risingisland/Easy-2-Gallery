@@ -60,7 +60,7 @@ if (isset($this->sanitizedGets['tag'])) {
        <table width="100%" cellpadding="5" cellspacing="1" class="grid" style="margin-bottom:10px">
            <tr>
                <td colspan="3">
-                   <input type="checkbox" onclick="selectAll(this.checked); void(0);" style="border:0;">
+                   <input type="checkbox" onclick="selectAll(this.checked); void(0);" style="border:2px solid #0099FF;">
                 <?php echo $this->lng['select_all']; ?>
             </td>
         </tr>

@@ -89,7 +89,7 @@ $filename = substr($row['filename'], 0, -(strlen($ext)));
                                         <td valign="top" ><b><?php echo $this->lng['description']; ?></b></td>
                                         <td valign="top"><b>:</b></td>
                                         <td valign="top" >
-                                            <textarea name="description" style="width:100%" class="mceEditor" cols="" rows="4"><?php echo $row['description']; ?></textarea>
+                                            <textarea name="description" style="width:100%" class="e2gRichText" cols="" rows="4"><?php echo $row['description']; ?></textarea>
                                         </td>
                                     </tr>
                                     <tr>
@@ -119,9 +119,11 @@ $filename = substr($row['filename'], 0, -(strlen($ext)));
                             </tr>
                             <tr>
                                 <td colspan="3">
-                                    <input type="submit" value="<?php echo $this->lng['save']; ?>" />
-                                    <input type="button" value="<?php echo $this->lng['cancel']; ?>"
-                                           onclick="document.location.href='<?php echo $this->e2gModCfg['index'] . (!empty($this->sanitizedGets['tag']) ? '&amp;tag=' . $this->sanitizedGets['tag'] : '&amp;pid=' . $this->e2gModCfg['parent_id']); ?>'" />
+                                    <div style="margin: 20px 0 20px 200px;">
+										<input type="submit" class="btn btn-success" value="<?php echo $this->lng['save']; ?>" />
+										<input type="button" class="btn btn-warning" value="<?php echo $this->lng['cancel']; ?>"
+											   onclick="document.location.href='<?php echo $this->e2gModCfg['index'] . (!empty($this->sanitizedGets['tag']) ? '&amp;tag=' . $this->sanitizedGets['tag'] : '&amp;pid=' . $this->e2gModCfg['parent_id']); ?>'" />
+									</div>
                                 </td>
                             </tr>
                         </table>

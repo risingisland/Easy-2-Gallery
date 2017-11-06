@@ -31,7 +31,7 @@ $filesLink = $this->e2gModCfg['e2gPages']['files']['link'];
                                 <tr>
                                     <td colspan="3">
                                         <!-- Table headers -->
-                                        <input type="checkbox" onclick="selectAllComments(this.checked); void(0);" style="border:0;" />
+                                        <input type="checkbox" onclick="selectAllComments(this.checked); void(0);" style="border:2px solid #0099FF;" />
                                     <?php echo $this->lng['select_all']; ?>&nbsp;&nbsp; | &nbsp;
                                     <?php
                                     echo (!$this->sanitizedGets['filter'] ? '<b>' : '<a href="' . $this->e2gModCfg['index'] . '" style="text-decoration: underline;">');

@@ -4,7 +4,7 @@
  * Easy 2 Gallery Plugin
  *
  * @category	plugins
- * @version     1.5.5 rc1
+ * @version     1.6-rc1
  * @author      Author: @goldsky @Breezer @risingisland @Nicola1971
  * @internal	@modx_category Gallery
  * @license 	http://www.gnu.org/copyleft/gpl.html GNU Public License (GPL)

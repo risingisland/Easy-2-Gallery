@@ -18,113 +18,113 @@ foreach ($this->e2gModCfg['e2gPages'] as $v) {
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <title>Easy 2 Gallery <?php echo E2G_VERSION; ?> | <?php echo $e2gPage[$this->e2gModCfg['e2gpg']]['lng']; ?></title>
-        <meta http-equiv="Content-Type" content="text/html; charset=<?php echo $this->lng['charset']; ?>" />
-        <link rel="stylesheet" type="text/css" href="media/style/<?php echo $this->e2gModCfg['_t']; ?>/style.css" />
-        <link rel="stylesheet" type="text/css" href="<?php echo E2G_MODULE_URL; ?>includes/tpl/css/e2g_mod.css" />
-        <link rel="stylesheet" type="text/css" href="<?php echo MODX_SITE_URL; ?>assets/modules/easy2/libs/viewers/highslide/highslide.css" />
-        <link rel="stylesheet" type="text/css" href="media/style/common/bootstrap/css/bootstrap.min.css" />
-        <link rel="stylesheet" href="media/style/common/font-awesome/css/font-awesome.min.css" />
-        <link rel="stylesheet" type="text/css" href="<?php echo E2G_MODULE_URL; ?>includes/tpl/css/colors.css" />
-        <?php echo $this->plugin('OnE2GModHeadCSSScript'); ?>
+	<head>
+		<title>Easy 2 Gallery <?php echo E2G_VERSION; ?> | <?php echo $e2gPage[$this->e2gModCfg['e2gpg']]['lng']; ?></title>
+		<meta http-equiv="Content-Type" content="text/html; charset=<?php echo $this->lng['charset']; ?>" />
+		<link rel="stylesheet" type="text/css" href="media/style/<?php echo $this->e2gModCfg['_t']; ?>/style.css" />
+		<link rel="stylesheet" type="text/css" href="<?php echo E2G_MODULE_URL; ?>includes/tpl/css/e2g_mod.css" />
+		<link rel="stylesheet" type="text/css" href="<?php echo MODX_SITE_URL; ?>assets/modules/easy2/libs/viewers/highslide/highslide.css" />
+		<link rel="stylesheet" type="text/css" href="media/style/common/bootstrap/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="media/style/common/font-awesome/css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="<?php echo E2G_MODULE_URL; ?>includes/tpl/css/colors.css" />
+		<?php echo $this->plugin('OnE2GModHeadCSSScript'); ?>
 
-        <script type="text/javascript" src="media/script/tabpane.js"></script>
-        <script type="text/javascript" src="<?php echo E2G_MODULE_URL; ?>includes/tpl/js/e2g_mod.js"></script>
-        <script type="text/javascript">
-            //<![CDATA[
-            function confirmDelete() {
-                return (confirm("<?php echo $this->lng['js_delete_confirm']; ?>"));
-            }
+		<script type="text/javascript" src="media/script/tabpane.js"></script>
+		<script type="text/javascript" src="<?php echo E2G_MODULE_URL; ?>includes/tpl/js/e2g_mod.js"></script>
+		<script type="text/javascript">
+			//<![CDATA[
+			function confirmDelete() {
+				return (confirm("<?php echo $this->lng['js_delete_confirm']; ?>"));
+			}
 
-            function confirmDeleteFolder() {
-                return (confirm("<?php echo $this->lng['js_delete_folder_confirm']; ?>"));
-            }
+			function confirmDeleteFolder() {
+				return (confirm("<?php echo $this->lng['js_delete_folder_confirm']; ?>"));
+			}
 
-            function ignoreIPAddress() {
-                return (confirm("<?php echo $this->lng['js_ignore_ip_address_confirm']; ?>"));
-            }
+			function ignoreIPAddress() {
+				return (confirm("<?php echo $this->lng['js_ignore_ip_address_confirm']; ?>"));
+			}
 
-            function unignoreIPAddress() {
-                return (confirm("<?php echo $this->lng['js_unignore_ip_address_confirm']; ?>"));
-            }
+			function unignoreIPAddress() {
+				return (confirm("<?php echo $this->lng['js_unignore_ip_address_confirm']; ?>"));
+			}
 
-            function addField () {
-                var im = document.getElementById("imFields");
-                var di = document.createElement("DIV");
-                var fi = document.getElementById("firstElt");
-                di.innerHTML = '<a href="javascript:;" onclick="this.parentNode.parentNode.removeChild(this.parentNode);" style="color:red;text-decoration:none;"><b style="letter-spacing:4px"> &times; <?php echo $this->lng['remove']; ?><\/b><\/a>'+fi.innerHTML;
-                im.appendChild(di);
-                return true;
-            }
+			function addField () {
+				var im = document.getElementById("imFields");
+				var di = document.createElement("DIV");
+				var fi = document.getElementById("firstElt");
+				di.innerHTML = '<a href="javascript:;" onclick="this.parentNode.parentNode.removeChild(this.parentNode);" style="color:red;text-decoration:none;"><b style="letter-spacing:4px"> &times; <?php echo $this->lng['remove']; ?><\/b><\/a>'+fi.innerHTML;
+				im.appendChild(di);
+				return true;
+			}
 
-            function addSlideshow () {
-                var sl = document.getElementById("secondElt");
-                var di = document.createElement("DIV");
-                var fi = document.getElementById("firstElt");
-                di.innerHTML = '<a href="javascript:;" onclick="this.parentNode.parentNode.removeChild(this.parentNode);" style="color:red;text-decoration:none;"><b style="letter-spacing:4px"> &times; <?php echo $this->lng['remove']; ?><\/b><\/a>'+fi.innerHTML;
-                sl.appendChild(di);
-                return true;
-            }
+			function addSlideshow () {
+				var sl = document.getElementById("secondElt");
+				var di = document.createElement("DIV");
+				var fi = document.getElementById("firstElt");
+				di.innerHTML = '<a href="javascript:;" onclick="this.parentNode.parentNode.removeChild(this.parentNode);" style="color:red;text-decoration:none;"><b style="letter-spacing:4px"> &times; <?php echo $this->lng['remove']; ?><\/b><\/a>'+fi.innerHTML;
+				sl.appendChild(di);
+				return true;
+			}
 
-            function addPlugin () {
-                var pl = document.getElementById("secondElt");
-                var di = document.createElement("DIV");
-                var fi = document.getElementById("firstElt");
-                di.innerHTML = '<a href="javascript:;" onclick="this.parentNode.parentNode.removeChild(this.parentNode);" style="color:red;text-decoration:none;"><b style="letter-spacing:4px"> &times; <?php echo $this->lng['remove']; ?><\/b><\/a>'+fi.innerHTML;
-                pl.appendChild(di);
-                return true;
-            }
+			function addPlugin () {
+				var pl = document.getElementById("secondElt");
+				var di = document.createElement("DIV");
+				var fi = document.getElementById("firstElt");
+				di.innerHTML = '<a href="javascript:;" onclick="this.parentNode.parentNode.removeChild(this.parentNode);" style="color:red;text-decoration:none;"><b style="letter-spacing:4px"> &times; <?php echo $this->lng['remove']; ?><\/b><\/a>'+fi.innerHTML;
+				pl.appendChild(di);
+				return true;
+			}
 
             // for download preview
             function uimPreview (imSrc) {
-                if (!document.images) return FALSE;
-                var im = new Image();
-                im.src = imSrc;
-                var w = im.width;
-                var h = im.height;
-                if ( w > 161 || h > 161 ) {
-                    var ratio = w / h;
-                    if ( ratio <= 1 ) {
-                        h = 161;
-                        w = Math.round(161*ratio);
-                    } else {
-                        w = 161;
-                        h = Math.round(161/ratio);
-                    }
-                }
-                var imBox = this.document.getElementById("imBox");
-                if ( w == 0 || h == 0 ) {
-                    imBox.innerHTML = '<?php echo $this->lng['uim_preview_err']; ?>';
-                } else {
-                    imBox.innerHTML = '<img src="'+imSrc+'" width="'+w+'" height="'+h+'" alt="" />';
-                }
-                return true;
-            }
+				if (!document.images) return FALSE;
+				var im = new Image();
+				im.src = imSrc;
+				var w = im.width;
+				var h = im.height;
+				if ( w > 161 || h > 161 ) {
+					var ratio = w / h;
+					if ( ratio <= 1 ) {
+						h = 161;
+						w = Math.round(161*ratio);
+					} else {
+						w = 161;
+						h = Math.round(161/ratio);
+					}
+				}
+				var imBox = this.document.getElementById("imBox");
+				if ( w == 0 || h == 0 ) {
+					imBox.innerHTML = '<?php echo $this->lng['uim_preview_err']; ?>';
+				} else {
+					imBox.innerHTML = '<img src="'+imSrc+'" width="'+w+'" height="'+h+'" alt="" />';
+				}
+				return true;
+			}
 
-            function submitform(i) {
-                if (i==1) {
-                    var index=document.forms["topmenu"].newparent.selectedIndex;
-                    if (document.forms["topmenu"].newparent.options[index].value != "") {
-                        window.location.href= '<?php echo html_entity_decode($this->e2gModCfg['index']); ?>&pid='+ document.forms["topmenu"].newparent.options[index].value;
-                    }
-                }
-                if (i=='1b') {
-                    document.forms["topmenu"].action=
-                        "<?php echo html_entity_decode($this->e2gModCfg['index']); ?>&pid=<?php echo $_POST['newparent']; ?>&page=openexplorer";
-                    document.forms["topmenu"].submit();
-                }
-                if (i==2) {
-                    var index=document.forms["topmenu"].opentag.selectedIndex;
-                    if (document.forms["topmenu"].opentag.options[index].value != "") {
-                        window.location.href= '<?php echo html_entity_decode($this->e2gModCfg['index']); ?>&tag='+ document.forms["topmenu"].opentag.options[index].value;
-                    }
-                }
-                if (i==3) {
-                    document.forms["list"].action=
-                        "<?php echo html_entity_decode($this->e2gModCfg['index']) . '&act=show_checked&pid=' . $this->e2gModCfg['parent_id'] . (!empty($cpath) ? '&path=' . $cpath : ''); ?>";
-                    document.forms["list"].submit();
-                }
+			function submitform(i) {
+				if (i==1) {
+					var index=document.forms["topmenu"].newparent.selectedIndex;
+					if (document.forms["topmenu"].newparent.options[index].value != "") {
+						window.location.href= '<?php echo html_entity_decode($this->e2gModCfg['index']); ?>&pid='+ document.forms["topmenu"].newparent.options[index].value;
+					}
+				}
+				if (i=='1b') {
+					document.forms["topmenu"].action=
+						"<?php echo html_entity_decode($this->e2gModCfg['index']); ?>&pid=<?php echo $_POST['newparent']; ?>&page=openexplorer";
+					document.forms["topmenu"].submit();
+				}
+				if (i==2) {
+					var index=document.forms["topmenu"].opentag.selectedIndex;
+					if (document.forms["topmenu"].opentag.options[index].value != "") {
+						window.location.href= '<?php echo html_entity_decode($this->e2gModCfg['index']); ?>&tag='+ document.forms["topmenu"].opentag.options[index].value;
+					}
+				}
+				if (i==3) {
+					document.forms["list"].action=
+						"<?php echo html_entity_decode($this->e2gModCfg['index']) . '&act=show_checked&pid=' . $this->e2gModCfg['parent_id'] . (!empty($cpath) ? '&path=' . $cpath : ''); ?>";
+					document.forms["list"].submit();
+				}
                 if (i==4) {
                     document.forms["list"].action=
                         "<?php echo html_entity_decode($this->e2gModCfg['index']) . '&act=hide_checked&pid=' . $this->e2gModCfg['parent_id'] . (!empty($cpath) ? '&path=' . $cpath : ''); ?>";
@@ -435,6 +435,22 @@ foreach ($this->e2gModCfg['e2gPages'] as $v) {
             }
             //]]>
         </script>
+		
+		<style>body, html, .mce-tinymce, .mce-edit-area.mce-container, iframe, .mce-container-body.mce-stack-layout{width: 100% !important;}</style>
+		<script type="text/javascript" src="<?php echo MODX_SITE_URL . $this->e2g['tinymcefolder']; ?>/tinymce.min.js"></script>
+        <script type="text/javascript">
+            tinymce.init({
+				selector: '.e2gRichText',  // change this value according to your HTML
+				width: 900,
+				height: 150,
+				menubar: false,  // removes the menubar
+				forced_root_block : false, // removes <p>
+				//entity_encoding : "named", // raw, named, numeric
+				entities : '&quot',
+				plugins: ['code emoticons preview autolink link charmap'],
+				toolbar: ' undo redo | bold italic underline, strikethrough, subscript, superscript, removeformat | link emoticons charmap | code preview '
+			});
+        </script>
 
         <script type="text/javascript" src="<?php echo MODX_SITE_URL; ?>assets/modules/easy2/libs/viewers/highslide/highslide-full.js"></script>
         <script type="text/javascript">
@@ -452,96 +468,108 @@ foreach ($this->e2gModCfg['e2gPages'] as $v) {
         <?php echo $this->plugin('OnE2GModHeadScript'); ?>
 
     </head>
-    <body>
-        <?php
-        $suc = $err = '';
-        $count_suc = count($_SESSION['easy2suc']);
-        $count_err = count($_SESSION['easy2err']);
-        if ($count_err > 0) {
-            $err = '<div class="alert alert-danger" style="margin: 30px;padding: 10px;"><i class="fa fa-exclamation-triangle fa-2x"></i> ' . implode('<br />', $_SESSION['easy2err']) . '</div>';
-            $_SESSION['easy2err'] = array();
-        }
-        if ($count_suc > 0) {
-            $suc = '<div class="alert alert-success" style="margin: 30px;padding: 10px;"><i class="fa fa-info-circle fa-2x"></i>
- ' . implode('<br />', $_SESSION['easy2suc']) . '</div>';
-            $_SESSION['easy2suc'] = array();
-        }
-        if (($count_suc + $count_err) == 0)
-            $suc = '&nbsp;';
+	<body>
+		<?php
+			$suc = $err = '';
+			$count_suc = count($_SESSION['easy2suc']);
+			$count_err = count($_SESSION['easy2err']);
+			if ($count_err > 0) {
+				$err = '<div class="alert alert-danger"><i class="fa fa-exclamation-triangle fa-2x"></i> ' . implode('<br />', $_SESSION['easy2err']) . '</div>';
+				$_SESSION['easy2err'] = array();
+			}
+			if ($count_suc > 0) {
+				$suc = '<div class="alert alert-success"><i class="fa fa-info-circle fa-2x"></i>
+				' . implode('<br />', $_SESSION['easy2suc']) . '</div>';
+				$_SESSION['easy2suc'] = array();
+			}
+			if (($count_suc + $count_err) == 0)
+				$suc = '&nbsp;';
 
-        $this->_checkConfigCompletion();
+				$this->_checkConfigCompletion();
 
-        if (empty($_SESSION['e2gMgr']))
-            $this->_loadE2gMgrSessions();
+			if (empty($_SESSION['e2gMgr']))
+				$this->_loadE2gMgrSessions();
 
-        $userPermissions = $_SESSION['e2gMgr']['permissions'];
-        $userRole = $_SESSION['e2gMgr']['role'];
-        $userPermissionsArray = @explode(',', $userPermissions);
-        ?>
+				$userPermissions = $_SESSION['e2gMgr']['permissions'];
+				$userRole = $_SESSION['e2gMgr']['role'];
+				$userPermissionsArray = @explode(',', $userPermissions);
+		?>
+		
         <div id="report"><?php echo $err . $suc; ?></div>
-        <div class="sectionHeader">
+        
+		<h1>
+			<i class="fa fa-photo"></i>Easy 2 Gallery <?php echo E2G_VERSION; ?>
+		</h1>
+		<!--div class="sectionHeader">
             <span style="color:#0e80cb;font-size: 1.5em;line-height: 1.5rem;margin: 0;padding: 0.8rem;"><i class="fa fa-photo"></i> Easy 2 Gallery <?php echo E2G_VERSION; ?></span>
-        </div>
-        <div class="e2g-navigation">
-            <span class="e2g-navigationTitle btn btn-secondary">Menu</span>
-            <span class="e2g-navigationTree">
-                <?php
-                foreach ($this->e2gModCfg['e2gPages'] as $k => $v) {
-                    // $userRole == '1' is a Supreme Administrator role
-                    if ($userRole == '1'
-                            || in_array($v['access'], $userPermissionsArray)
-                            || $v['title'] == 'dashboard'
-                    ) {
-                ?>
-                        <span class="e2g-navigationBranch">
-                    <?php if ($this->e2gModCfg['e2gpg'] != $v['e2gpg']) {
-                    ?>
-                            <a href="<?php echo $v['link']; ?>">
-                        <?php } ?>
-                        <span class="navItem<?php echo (($this->e2gModCfg['e2gpg'] == $v['e2gpg']) ? ' active' : ''); ?>">
-                            <span class="navTitle"><?php echo $v['lng']; ?></span>
-                            <span class="navIcon"><?php echo $v['icon']; ?></span>
-                        </span>
-                        <?php if ($this->e2gModCfg['e2gpg'] != $v['e2gpg']) {
-                        ?>
-                        </a>
-                    <?php } ?>
-                    </span>
-                <?php
-                    }
-                }
-                ?>
-            </span>
-        </div>
-        <div class="sectionBody">
-            <div class="tab-pane" id="easy2Pane">
-                <script type="text/javascript">
-                    var tpEasy2 = new WebFXTabPane(document.getElementById('easy2Pane'));
-                </script>
-                <?php
-                    // $userRole == '1' is a Supreme Administrator role
-                    if ($userRole == '1'
-                            || in_array($e2gPage[$this->e2gModCfg['e2gpg']]['access'], $userPermissionsArray)
-                            || $e2gPage[$this->e2gModCfg['e2gpg']]['title'] == 'dashboard'
-                    ) {
-                ?>
-                        <div class="pageTitle"><span><?php echo $e2gPage[$this->e2gModCfg['e2gpg']]['lng']; ?></span></div>
-                <?php
-                    }
-                ?>
-                    <div style="clear:both;"></div>
-                <?php
-                    // $userRole == '1' is a Supreme Administrator role
-                    if ($userRole == '1'
-                            || in_array($e2gPage[$this->e2gModCfg['e2gpg']]['access'], $userPermissionsArray)
-                            || $e2gPage[$this->e2gModCfg['e2gpg']]['title'] == 'dashboard'
-                    ) {
-                        include_once $e2gPage[$this->e2gModCfg['e2gpg']]['file'];
-                    }
-                ?>
-                </div>
-            </div>
-            <span class="e2g_grayed"><?php echo $this->_echoMemoryUsage(); ?></span>
-        <p>&nbsp;</p>
-    </body>
+        </div-->
+		<div class="e2g-navigation">
+			<span class="e2g-navigationTitle btn">Menu</span>
+			<span class="e2g-navigationTree">
+				<?php
+					foreach ($this->e2gModCfg['e2gPages'] as $k => $v) {
+						// $userRole == '1' is a Supreme Administrator role
+						if ($userRole == '1'
+						|| in_array($v['access'], $userPermissionsArray)
+						|| $v['title'] == 'dashboard'
+					) {
+				?>
+				<span class="e2g-navigationBranch">
+					<?php if ($this->e2gModCfg['e2gpg'] != $v['e2gpg']) {
+					?>
+					<a href="<?php echo $v['link']; ?>">
+						<?php } ?>
+						<span class="navItem<?php echo (($this->e2gModCfg['e2gpg'] == $v['e2gpg']) ? ' active' : ''); ?>">
+							<span class="navTitle"><?php echo $v['lng']; ?></span>
+							<span class="navIcon"><?php echo $v['icon']; ?></span>
+						</span>
+						<?php if ($this->e2gModCfg['e2gpg'] != $v['e2gpg']) {
+						?>
+					</a>
+					<?php } ?>
+				</span>
+				<?php
+					}
+					}
+				?>
+			</span>
+		</div>
+		
+		<!--div class="sectionBody"-->
+		<div class="tab-page">
+			<div class="tab-pane" id="easy2Pane">
+				<script type="text/javascript">
+					var tpEasy2 = new WebFXTabPane(document.getElementById('easy2Pane'));
+				</script>
+				<?php
+					// $userRole == '1' is a Supreme Administrator role
+					if ($userRole == '1'
+					|| in_array($e2gPage[$this->e2gModCfg['e2gpg']]['access'], $userPermissionsArray)
+					|| $e2gPage[$this->e2gModCfg['e2gpg']]['title'] == 'dashboard'
+					) {
+				?>
+				<div class="pageTitle">
+					<span>
+						<?php echo $e2gPage[$this->e2gModCfg['e2gpg']]['lng']; ?>
+					</span>
+				</div>
+				<?php
+					}
+				?>
+				<div style="clear:both;"></div>
+				<?php
+					// $userRole == '1' is a Supreme Administrator role
+					if ($userRole == '1'
+						|| in_array($e2gPage[$this->e2gModCfg['e2gpg']]['access'], $userPermissionsArray)
+						|| $e2gPage[$this->e2gModCfg['e2gpg']]['title'] == 'dashboard'
+						) {
+							include_once $e2gPage[$this->e2gModCfg['e2gpg']]['file'];
+						}
+				?>
+			</div>
+		</div>
+		<span class="e2g_grayed">
+			<?php echo $this->_echoMemoryUsage(); ?>
+		</span>
+	</body>
 </html>
