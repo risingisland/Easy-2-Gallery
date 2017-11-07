@@ -1,22 +1,21 @@
 <?php
-// disabled for:
-// http://modxcms.com/forums/index.php/topic,23177.msg308887.html#msg308887
-// header('content-type: text/html;' . $this->lng['charset']);
-// http://modxcms.com/forums/index.php/topic,23177.msg309172.html#msg309172
-// $setlocale = @explode(',', trim(trim($this->lng['setlocale'], "setlocale("), ')'));
-// call_user_func_array('setlocale', array(constant(trim($setlocale[0])), trim($setlocale[1])));
+	// disabled for:
+	// http://modxcms.com/forums/index.php/topic,23177.msg308887.html#msg308887
+	// header('content-type: text/html;' . $this->lng['charset']);
+	// http://modxcms.com/forums/index.php/topic,23177.msg309172.html#msg309172
+	// $setlocale = @explode(',', trim(trim($this->lng['setlocale'], "setlocale("), ')'));
+	// call_user_func_array('setlocale', array(constant(trim($setlocale[0])), trim($setlocale[1])));
 
-if (IN_MANAGER_MODE != 'true')
-    die("<b>INCLUDE_ORDERING_ERROR</b><br /><br />Please use the MODx Content Manager instead of accessing this file directly.");
+	if (IN_MANAGER_MODE != 'true')
+	die("<b>INCLUDE_ORDERING_ERROR</b><br /><br />Please use the MODx Content Manager instead of accessing this file directly.");
 
-$filtered = isset($this->sanitizedGets['filter']) ? '&amp;filter=' . $this->sanitizedGets['filter'] : '';
+	$filtered = isset($this->sanitizedGets['filter']) ? '&amp;filter=' . $this->sanitizedGets['filter'] : '';
 
-foreach ($this->e2gModCfg['e2gPages'] as $v) {
-    $e2gPage[$v['e2gpg']] = $v;
-}
+	foreach ($this->e2gModCfg['e2gPages'] as $v) {
+	$e2gPage[$v['e2gpg']] = $v;
+	}
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<title>Easy 2 Gallery <?php echo E2G_VERSION; ?> | <?php echo $e2gPage[$this->e2gModCfg['e2gpg']]['lng']; ?></title>
@@ -125,152 +124,152 @@ foreach ($this->e2gModCfg['e2gPages'] as $v) {
 						"<?php echo html_entity_decode($this->e2gModCfg['index']) . '&act=show_checked&pid=' . $this->e2gModCfg['parent_id'] . (!empty($cpath) ? '&path=' . $cpath : ''); ?>";
 					document.forms["list"].submit();
 				}
-                if (i==4) {
-                    document.forms["list"].action=
-                        "<?php echo html_entity_decode($this->e2gModCfg['index']) . '&act=hide_checked&pid=' . $this->e2gModCfg['parent_id'] . (!empty($cpath) ? '&path=' . $cpath : ''); ?>";
-                    document.forms["list"].submit();
-                }
-                if (i==5) {
-                    document.forms["list"].action=
-                        "<?php echo html_entity_decode($this->e2gModCfg['index']) . '&act=delete_checked&pid=' . $this->e2gModCfg['parent_id'] . (!empty($cpath) ? '&path=' . $cpath : ''); ?>";
-                    document.forms["list"].submit();
-                }
-                if (i==6) {
-                    document.forms["list"].action=
-                        "<?php echo html_entity_decode($this->e2gModCfg['index']) . '&act=download_checked&pid=' . $this->e2gModCfg['parent_id'] . (!empty($cpath) ? '&path=' . $cpath : ''); ?>";
-                    document.forms["list"].submit();
-                }
-                if (i==7) {
-                    document.forms["list"].action=
-                        "<?php echo html_entity_decode($this->e2gModCfg['index']) . '&act=move_checked&pid=' . $this->e2gModCfg['parent_id'] . (!empty($cpath) ? '&path=' . $cpath : ''); ?>";
-                    document.forms["list"].submit();
-                }
-                if (i==8) {
-                    document.forms["list"].action=
-                        "<?php echo html_entity_decode($this->e2gModCfg['index']) . '&act=tag_add_checked&pid=' . $this->e2gModCfg['parent_id'] . (!empty($cpath) ? '&path=' . $cpath : ''); ?>";
-                    document.forms["list"].submit();
-                }
-                if (i==9) {
-                    document.forms["list"].action=
-                        "<?php echo html_entity_decode($this->e2gModCfg['index']) . '&act=tag_remove_checked&pid=' . $this->e2gModCfg['parent_id'] . (!empty($cpath) ? '&path=' . $cpath : ''); ?>";
-                    document.forms["list"].submit();
-                }
-            }
+				if (i==4) {
+					document.forms["list"].action=
+						"<?php echo html_entity_decode($this->e2gModCfg['index']) . '&act=hide_checked&pid=' . $this->e2gModCfg['parent_id'] . (!empty($cpath) ? '&path=' . $cpath : ''); ?>";
+					document.forms["list"].submit();
+				}
+				if (i==5) {
+					document.forms["list"].action=
+						"<?php echo html_entity_decode($this->e2gModCfg['index']) . '&act=delete_checked&pid=' . $this->e2gModCfg['parent_id'] . (!empty($cpath) ? '&path=' . $cpath : ''); ?>";
+					document.forms["list"].submit();
+				}
+				if (i==6) {
+					document.forms["list"].action=
+						"<?php echo html_entity_decode($this->e2gModCfg['index']) . '&act=download_checked&pid=' . $this->e2gModCfg['parent_id'] . (!empty($cpath) ? '&path=' . $cpath : ''); ?>";
+					document.forms["list"].submit();
+				}
+				if (i==7) {
+					document.forms["list"].action=
+						"<?php echo html_entity_decode($this->e2gModCfg['index']) . '&act=move_checked&pid=' . $this->e2gModCfg['parent_id'] . (!empty($cpath) ? '&path=' . $cpath : ''); ?>";
+					document.forms["list"].submit();
+				}
+				if (i==8) {
+					document.forms["list"].action=
+						"<?php echo html_entity_decode($this->e2gModCfg['index']) . '&act=tag_add_checked&pid=' . $this->e2gModCfg['parent_id'] . (!empty($cpath) ? '&path=' . $cpath : ''); ?>";
+					document.forms["list"].submit();
+				}
+				if (i==9) {
+					document.forms["list"].action=
+						"<?php echo html_entity_decode($this->e2gModCfg['index']) . '&act=tag_remove_checked&pid=' . $this->e2gModCfg['parent_id'] . (!empty($cpath) ? '&path=' . $cpath : ''); ?>";
+					document.forms["list"].submit();
+				}
+			}
 
-            function submitcomment(i) {
-                if (i==1) {
-                    document.forms["listComments"].action=
-                        "<?php echo html_entity_decode($this->e2gModCfg['index']) . '&act=com_list_actions'; ?>";
-                    document.forms["listComments"].submit();
-                }
-                if (i==2) {
-                    document.forms["listHiddenComments"].action=
-                        "<?php echo html_entity_decode($this->e2gModCfg['index']) . '&act=com_list_actions'; ?>";
-                    document.forms["listHiddenComments"].submit();
-                }
-                if (i==3) {
-                    document.forms["fileComments"].action=
-                        "<?php echo html_entity_decode($this->e2gModCfg['index']) . '&act=com_list_actions'; ?>";
-                    document.forms["fileComments"].submit();
-                }
-            }
+			function submitcomment(i) {
+				if (i==1) {
+					document.forms["listComments"].action=
+						"<?php echo html_entity_decode($this->e2gModCfg['index']) . '&act=com_list_actions'; ?>";
+					document.forms["listComments"].submit();
+				}
+				if (i==2) {
+					document.forms["listHiddenComments"].action=
+						"<?php echo html_entity_decode($this->e2gModCfg['index']) . '&act=com_list_actions'; ?>";
+					document.forms["listHiddenComments"].submit();
+				}
+				if (i==3) {
+					document.forms["fileComments"].action=
+						"<?php echo html_entity_decode($this->e2gModCfg['index']) . '&act=com_list_actions'; ?>";
+					document.forms["fileComments"].submit();
+				}
+			}
 
-            function savecomment(i) {
-                if (i==1) {
-                    document.forms["listComments"].action=
-                        "<?php echo html_entity_decode($this->e2gModCfg['index'] . $filtered) . '&act=com_save'; ?>";
-                    document.forms["listComments"].submit();
-                }
-                if (i==2) {
-                    document.forms["listHiddenComments"].action=
-                        "<?php echo html_entity_decode($this->e2gModCfg['index']) . '&act=com_save'; ?>";
-                    document.forms["listHiddenComments"].submit();
-                }
-                if (i==3) {
-                    document.forms["fileComments"].action=
-                        "<?php echo html_entity_decode($this->e2gModCfg['index']) . '&page=comments&file_id=' . $this->sanitizedGets['file_id'] . '&pid=' . $this->sanitizedGets['pid'] . '&act=com_save'; ?>";
-                    document.forms["fileComments"].submit();
-                }
-            }
+			function savecomment(i) {
+				if (i==1) {
+					document.forms["listComments"].action=
+						"<?php echo html_entity_decode($this->e2gModCfg['index'] . $filtered) . '&act=com_save'; ?>";
+					document.forms["listComments"].submit();
+				}
+				if (i==2) {
+					document.forms["listHiddenComments"].action=
+						"<?php echo html_entity_decode($this->e2gModCfg['index']) . '&act=com_save'; ?>";
+					document.forms["listHiddenComments"].submit();
+				}
+				if (i==3) {
+					document.forms["fileComments"].action=
+						"<?php echo html_entity_decode($this->e2gModCfg['index']) . '&page=comments&file_id=' . $this->sanitizedGets['file_id'] . '&pid=' . $this->sanitizedGets['pid'] . '&act=com_save'; ?>";
+					document.forms["fileComments"].submit();
+				}
+			}
 
-            function xhrRequest() {
-                var xhr;
-                try {
-                    xhr = new XMLHttpRequest();
-                } catch(e) {
-                    var xmlHttpVersion = new Array( "MSXML2.xhr.6.0",
-                    "MSXML2.XMLHTTP.5.0",
-                    "MSXML2.XMLHTTP.4.0",
-                    "MSXML2.XMLHTTP.3.0",
-                    "MSXML2.XMLHTTP",
-                    "Microsoft.XMLHTTP"
-                );
-                    for (var i=0; i=xmlHttpVersion.length && !xhr; i++) {
-                        try {
-                            xhr = new ActiveXObject(xmlHttpVersion[i]);
-                        } catch (e) {}
-                    }
-                }
-                if (!xhr)
-                    alert("Error creating the XMLHttpRequestObject.");
-                else
-                    return xhr;
-            }
+			function xhrRequest() {
+				var xhr;
+				try {
+					xhr = new XMLHttpRequest();
+				} catch(e) {
+					var xmlHttpVersion = new Array( "MSXML2.xhr.6.0",
+						"MSXML2.XMLHTTP.5.0",
+						"MSXML2.XMLHTTP.4.0",
+						"MSXML2.XMLHTTP.3.0",
+						"MSXML2.XMLHTTP",
+						"Microsoft.XMLHTTP"
+				);
+					for (var i=0; i=xmlHttpVersion.length && !xhr; i++) {
+						try {
+							xhr = new ActiveXObject(xmlHttpVersion[i]);
+						} catch (e) {}
+					}
+				}
+				if (!xhr)
+					alert("Error creating the XMLHttpRequestObject.");
+				else
+					return xhr;
+			}
 
-            function countFiles(path, pid) {
-                var xhr = xhrRequest();
-                var container = document.getElementById("countfiles_"+pid);
-                var oldcontainer = document.getElementById("countfileslink_"+pid);
-                var url = "<?php echo E2G_MODULE_URL; ?>includes/connector/connector.php?";
-                url += "action=module/countfiles";
-                url += "&path="+path;
-                url += "&pid="+pid;
-                if (xhr && container) {
-                    xhr.onreadystatechange = function() {
-                        if (xhr.readyState == 4 && xhr.status == 200) {
-                            container.innerHTML = xhr.responseText;
-                            container.removeChild(oldcontainer);
-                        } else {
-                            container.innerHTML = " <img src=\"<?php echo E2G_MODULE_URL; ?>includes\/tpl\/icons\/preloader10x10.gif\" \/>";
-                        }
-                    }
-                    xhr.open("GET", url, true);
-                    xhr.send(null);
-                } else {
-                    alert ("Your browser does not support HTTP Request!");
-                }
-            }
+			function countFiles(path, pid) {
+				var xhr = xhrRequest();
+				var container = document.getElementById("countfiles_"+pid);
+				var oldcontainer = document.getElementById("countfileslink_"+pid);
+				var url = "<?php echo E2G_MODULE_URL; ?>includes/connector/connector.php?";
+				url += "action=module/countfiles";
+				url += "&path="+path;
+				url += "&pid="+pid;
+				if (xhr && container) {
+					xhr.onreadystatechange = function() {
+						if (xhr.readyState == 4 && xhr.status == 200) {
+							container.innerHTML = xhr.responseText;
+							container.removeChild(oldcontainer);
+						} else {
+						container.innerHTML = " <img src=\"<?php echo E2G_MODULE_URL; ?>includes\/tpl\/icons\/preloader10x10.gif\" \/>";
+						}
+					}
+					xhr.open("GET", url, true);
+					xhr.send(null);
+				} else {
+					alert ("Your browser does not support HTTP Request!");
+				}
+			}
 
-            function synchro(path, pid, uid) {
-                var xhr = xhrRequest();
-                var report = document.getElementById("report");
-                var container = document.getElementById("thumbnail");
-                if (!container) {
-                    var container = document.getElementById("grid");
-                }
-                var url = "<?php echo E2G_MODULE_URL; ?>includes/connector/connector.php?";
-                url += "action=module/synchro";
-                url += "&a=<?php echo $this->sanitizedGets['a']; ?>&id=<?php echo $this->sanitizedGets['id']; ?>&e2gpg=<?php echo $this->sanitizedGets['e2gpg']; ?>&path="+path;
-                url += "<?php echo isset($this->sanitizedGets['tag']) ? '&tag=' . $this->sanitizedGets['tag'] : ''; ?>";
-                url += "&pid="+pid;
-                url += "&uid="+uid;
-                if (xhr && container) {
-                    xhr.onreadystatechange = function() {
-                        if (xhr.readyState == 4 && xhr.status == 200) {
-                            window.location.href='<?php echo htmlspecialchars_decode($this->e2gModCfg['index']); ?>&act=synchro';
-                            report.innerHTML = xhr.responseText;
-                        } else {
-                            container.innerHTML = "<img src=\"<?php echo E2G_MODULE_URL; ?>includes\/tpl\/icons\/preloader-file.gif\" \/>";
-                        }
-                    }
-                    xhr.open("GET", url, true);
-                    xhr.send(null);
-                } else {
-                    alert ("Your browser does not support HTTP Request!");
-                }
-            }
+			function synchro(path, pid, uid) {
+				var xhr = xhrRequest();
+				var report = document.getElementById("report");
+				var container = document.getElementById("thumbnail");
+				if (!container) {
+					var container = document.getElementById("grid");
+				}
+				var url = "<?php echo E2G_MODULE_URL; ?>includes/connector/connector.php?";
+				url += "action=module/synchro";
+				url += "&a=<?php echo $this->sanitizedGets['a']; ?>&id=<?php echo $this->sanitizedGets['id']; ?>&e2gpg=<?php echo $this->sanitizedGets['e2gpg']; ?>&path="+path;
+				url += "<?php echo isset($this->sanitizedGets['tag']) ? '&tag=' . $this->sanitizedGets['tag'] : ''; ?>";
+				url += "&pid="+pid;
+				url += "&uid="+uid;
+				if (xhr && container) {
+					xhr.onreadystatechange = function() {
+						if (xhr.readyState == 4 && xhr.status == 200) {
+							window.location.href='<?php echo htmlspecialchars_decode($this->e2gModCfg['index']); ?>&act=synchro';
+							report.innerHTML = xhr.responseText;
+						} else {
+							container.innerHTML = "<img src=\"<?php echo E2G_MODULE_URL; ?>includes\/tpl\/icons\/preloader-file.gif\" \/>";
+						}
+					}
+					xhr.open("GET", url, true);
+					xhr.send(null);
+				} else {
+					alert ("Your browser does not support HTTP Request!");
+				}
+			}
 
-            function viewDefaultThumbnails (path, pid, procFile) {
+			function viewDefaultThumbnails (path, pid, procFile) {
                 var xhr = xhrRequest();
                 var container = document.getElementById("thumbnail");
                 if (procFile=='rescanhd') {
@@ -436,10 +435,10 @@ foreach ($this->e2gModCfg['e2gPages'] as $v) {
             //]]>
         </script>
 		
-		<style>body, html, .mce-tinymce, .mce-edit-area.mce-container, iframe, .mce-container-body.mce-stack-layout{width: 100% !important;}</style>
+		<!--style>body, html, .mce-tinymce, .mce-edit-area.mce-container, iframe, .mce-container-body.mce-stack-layout{width: 100% !important;}</style>
 		<script type="text/javascript" src="<?php echo MODX_SITE_URL . $this->e2g['tinymcefolder']; ?>/tinymce.min.js"></script>
-        <script type="text/javascript">
-            tinymce.init({
+		<script type="text/javascript">
+			tinymce.init({
 				selector: '.e2gRichText',  // change this value according to your HTML
 				width: 900,
 				height: 150,
@@ -450,24 +449,23 @@ foreach ($this->e2gModCfg['e2gPages'] as $v) {
 				plugins: ['code emoticons preview autolink link charmap'],
 				toolbar: ' undo redo | bold italic underline, strikethrough, subscript, superscript, removeformat | link emoticons charmap | code preview '
 			});
-        </script>
-
-        <script type="text/javascript" src="<?php echo MODX_SITE_URL; ?>assets/modules/easy2/libs/viewers/highslide/highslide-full.js"></script>
-        <script type="text/javascript">
-            hs.graphicsDir = '<?php echo MODX_SITE_URL; ?>assets/modules/easy2/libs/viewers/highslide/graphics/';
-            hs.showCredits = false;
-            hs.outlineType = "rounded-white";
-            hs.allowSizeReduction = false;
-            hs.captionEval = "this.a.title";
-            hs.align = "center";
-            hs.blockRightClick = true;
-            hs.dimmingOpacity = 0.75;
-        </script>
-        <?php echo $this->plugin('OnE2GModHeadJSScript'); ?>
-
-        <?php echo $this->plugin('OnE2GModHeadScript'); ?>
-
-    </head>
+		</script-->
+		
+		<script type="text/javascript" src="<?php echo MODX_SITE_URL; ?>assets/modules/easy2/libs/viewers/highslide/highslide-full.js"></script>
+		<script type="text/javascript">
+			hs.graphicsDir = '<?php echo MODX_SITE_URL; ?>assets/modules/easy2/libs/viewers/highslide/graphics/';
+			hs.showCredits = false;
+			hs.outlineType = "rounded-white";
+			hs.allowSizeReduction = false;
+			hs.captionEval = "this.a.title";
+			hs.align = "center";
+			hs.blockRightClick = true;
+			hs.dimmingOpacity = 0.75;
+		</script>
+		<?php echo $this->plugin('OnE2GModHeadJSScript'); ?>
+		
+		<?php echo $this->plugin('OnE2GModHeadScript'); ?>
+	</head>
 	<body>
 		<?php
 			$suc = $err = '';
@@ -495,7 +493,7 @@ foreach ($this->e2gModCfg['e2gPages'] as $v) {
 				$userPermissionsArray = @explode(',', $userPermissions);
 		?>
 		
-        <div id="report"><?php echo $err . $suc; ?></div>
+		<div id="report"><?php echo $err . $suc; ?></div>
         
 		<h1>
 			<i class="fa fa-photo"></i>Easy 2 Gallery <?php echo E2G_VERSION; ?>

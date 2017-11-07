@@ -76,7 +76,7 @@ echo isset($this->sanitizedGets['tag']) ? '&amp;tag=' . $this->sanitizedGets['ta
                 <tr>
                     <td valign="top"><b><?php echo $this->lng['description']; ?></b></td>
                     <td valign="top"><b>:</b></td>
-                    <td><textarea name="description" style="width:500px" class="e2gRichText" cols="" rows="4"><?php echo $row['cat_description']; ?></textarea></td>
+                    <td><textarea name="description" style="width:100%" class="e2gRichText" cols="" rows="4"><?php echo $row['cat_description']; ?></textarea></td>
                 </tr>
                 <tr>
                     <td valign="top"><b><?php echo $this->lng['user_permissions']; ?></b></td>

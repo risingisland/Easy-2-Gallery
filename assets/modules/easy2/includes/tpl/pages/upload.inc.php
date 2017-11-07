@@ -60,7 +60,7 @@ if (IN_MANAGER_MODE != 'true')
                         <tr>
                             <td valign="top"><b><?php echo $this->lng['description']; ?> :</b></td>
                             <td>
-                                <textarea name="description[]" class="e2gRichText" style="width:500px" cols="" rows="3"></textarea>
+                                <textarea name="description[]" class="e2gRichText" style="width:100%" cols="" rows="3"></textarea>
                             </td>
                         </tr>
                     </table>

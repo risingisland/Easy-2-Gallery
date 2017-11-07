@@ -211,7 +211,7 @@ li.no-bullet {
 .h2title {
     font-size: 1.2em;
     font-weight: bold;
-    padding: 5px;
+    padding: 20px;
     margin: -4px -4px 4px -4px;
     color:#666666;
     /*text-shadow: 1px 1px 5px #666666;*/
@@ -666,3 +666,4 @@ border-left: none;
 .dash-title{font-weight: bold; color:#808080;}
 .dash-title-col{font-weight: bold; color:#808080;padding-right:5px;}
 #showActions, #hideActions, #deleteActions, #downloadActions, #tagActions{padding-left:150px;}
+.aForm{width:100%;}
