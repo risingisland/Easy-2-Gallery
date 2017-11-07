@@ -4,28 +4,28 @@ A Multilanguage image gallery snippet and module (for MODx Evolution 1.1 and abo
 
 ## Public Veiw:
 
-![Public Veiw 01](https://raw.githubusercontent.com/risingisland/Easy-2-Gallery/1.6-rc1/Home-My-Evolution-Site-01.png)
+![Public Veiw 01](https://raw.githubusercontent.com/risingisland/Easy-2-Gallery/1.6-rc1/Home-My-Evolution-Site-01_.png)
 
-![Public Veiw 02](https://raw.githubusercontent.com/risingisland/Easy-2-Gallery/1.6-rc1/Home-My-Evolution-Site-02.png)
+![Public Veiw 02](https://raw.githubusercontent.com/risingisland/Easy-2-Gallery/1.6-rc1/Home-My-Evolution-Site-02_.png)
 
 ## Manager Veiw:
 
 
 ### Manage images...
 
-![Manager Veiw Files](https://raw.githubusercontent.com/risingisland/Easy-2-Gallery/1.6-rc1/Easy-2-Gallery-1.6-rc1-Files.png)
+![Manager Veiw Files](https://raw.githubusercontent.com/risingisland/Easy-2-Gallery/1.6-rc1/Easy-2-Gallery-1.6-rc1-Files_.png)
 
 ### Adjust Image and Thumb Settings...
 
-![Manager Veiw Settings](https://raw.githubusercontent.com/risingisland/Easy-2-Gallery/1.6-rc1/Easy-2-Gallery-1.6-rc1-Settings.png)
+![Manager Veiw Settings](https://raw.githubusercontent.com/risingisland/Easy-2-Gallery/1.6-rc1/Easy-2-Gallery-1.6-rc1-Settings_.png)
 
 ### Available Viewers...
 
-![Manager Veiw Viewers](https://raw.githubusercontent.com/risingisland/Easy-2-Gallery/1.6-rc1/Easy-2-Gallery-1.6-rc1-Viewer.png)
+![Manager Veiw Viewers](https://raw.githubusercontent.com/risingisland/Easy-2-Gallery/1.6-rc1/Easy-2-Gallery-1.6-rc1-Viewer_.png)
 
 ### Easily translate to your own lang...
 
-![Manager Veiw Translate](https://raw.githubusercontent.com/risingisland/Easy-2-Gallery/1.6-rc1/Easy-2-Gallery-1.6-rc1-Help.png)
+![Manager Veiw Translate](https://raw.githubusercontent.com/risingisland/Easy-2-Gallery/1.6-rc1/Easy-2-Gallery-1.6-rc1-Help_.png)
 
 
 **Installation**
