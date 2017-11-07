@@ -65,7 +65,7 @@ if (IN_MANAGER_MODE != 'true')
                         </tr>
                     </table>
                     <div style="margin: 20px 110px;">
-                        <input class="btn btn-success" type="submit" class="success" value="<?php echo $this->lng['upload']; ?>" />
+                        <input class="btn btn-success" type="submit" value="<?php echo $this->lng['upload']; ?>" />
                         <input class="btn btn-secondary" type="button" value="<?php echo $this->lng['btn_field_add']; ?> +" onclick="addField();" />
                     </div>
                 </div>
@@ -95,7 +95,7 @@ if (IN_MANAGER_MODE != 'true')
                 <tr>
                     <td><b><?php echo $this->lng['archive']; ?>:</b></td>
                     <td>&nbsp;&nbsp;&nbsp;&nbsp;<input name="zip" type="file" size="77" /></td>
-                    <td><input type="submit" value="<?php echo $this->lng['upload']; ?>" /></td>
+                    <td><input class="btn btn-success" type="submit" value="<?php echo $this->lng['upload']; ?>" /></td>
                 </tr>
             </table>
         <?php echo $this->plugin('OnE2GZipUploadFormRender', array('gdir' => $this->e2gModCfg['gdir'])); ?>
