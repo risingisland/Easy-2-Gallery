@@ -97,7 +97,7 @@ if (isset($_GET['p']) && $_GET['p'] == 'del_inst_dir') {
                                 </table>
                                 <div><?php echo htmlspecialchars_decode($lngi['comment1'], ENT_QUOTES); ?></div>
                                 <div style="border: 1px solid #ccc; padding: 10px; background-color: #EFEFEF;">
-                                    <img src="<?php echo MODX_MANAGER_URL; ?>media/style/<?php echo $this->modx->config['manager_theme'];?>/images/icons/error.png" alt="" style="float: left; margin-right: 10px;" />
+                                    <span style="float: left; margin-right: 10px;" /><i class="fa fa-warning  btn btn-warning"></i></span>
                                     <?php echo htmlspecialchars_decode($lngi['comment'], ENT_QUOTES); ?>
                                 </div>
                                 <div style="color: green; font-weight: bold; font-size: 1.5em;"><?php echo htmlspecialchars_decode($lngi['system_check']); ?> :</div>
