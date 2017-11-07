@@ -2,7 +2,19 @@
 
 A Multilanguage image gallery snippet and module (for MODx Evolution 1.1 and above) that offers features like image browsing, automatic thumbnail creation, size adjusting, watermarking, adding comments, etc..
 
+**Public Veiw**
 ![Public Veiw 01](https://raw.githubusercontent.com/risingisland/Easy-2-Gallery/1.6-rc1/Home-My-Evolution-Site-01.png)
+![Public Veiw 02](https://raw.githubusercontent.com/risingisland/Easy-2-Gallery/1.6-rc1/Home-My-Evolution-Site-02.png)
+**Manager Veiw**
+Manage images...
+![Manager Veiw Files](https://raw.githubusercontent.com/risingisland/Easy-2-Gallery/1.6-rc1/Easy-2-Gallery-1.6-rc1-Files.png)
+Adjust Image and Thumb Settings...
+![Manager Veiw Settings](https://raw.githubusercontent.com/risingisland/Easy-2-Gallery/1.6-rc1/Easy-2-Gallery-1.6-rc1-Settings.png)
+Available Viewers...
+![Manager Veiw Viewers](https://raw.githubusercontent.com/risingisland/Easy-2-Gallery/1.6-rc1/Easy-2-Gallery-1.6-rc1-Viewer.png)
+Easily translate to your own lang...
+![Manager Veiw Translate](https://raw.githubusercontent.com/risingisland/Easy-2-Gallery/1.6-rc1/Easy-2-Gallery-1.6-rc1-Help.png)
+
 
 **Installation**
 
